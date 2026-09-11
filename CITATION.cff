@@ -1,0 +1,24 @@
+cff-version: 1.2.0
+message: "If adhd-mode helps your workflow, please cite it."
+title: "adhd-mode: Always-on ADHD-friendly output rules for AI coding tools"
+type: software
+authors:
+  - name: "adhd-mode contributors"
+repository-code: "https://github.com/DevAnimecx/adhd-mode"
+license: MIT
+version: "1.0.0"
+date-released: "2026-09-11"
+keywords:
+  - adhd
+  - ai-coding
+  - cursor
+  - github-copilot
+  - windsurf
+  - gemini-cli
+  - codex
+  - agents-md
+  - productivity
+  - developer-tools
+abstract: >-
+  adhd-mode ships 10 ADHD-friendly output rules as a single AGENTS.md file
+  that 20+ AI coding tools read natively. Rules adapted from ayghri/i-have-adhd (MIT).

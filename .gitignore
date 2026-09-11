@@ -1,0 +1,4 @@
+*.bak-adhd-mode
+__pycache__/
+*.pyc
+.DS_Store
