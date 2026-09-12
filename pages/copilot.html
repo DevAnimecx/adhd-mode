@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>ADHD Copilot instructions — adhd-mode | GitHub Copilot ADHD-Friendly Output Rules</title>
+<meta name="description" content="ADHD-friendly output rules for GitHub Copilot. Make Copilot Chat lead with action, number steps, and stop wrapping answers in filler. One .github/copilot-instructions.md file.">
+<meta name="keywords" content="ADHD Copilot instructions, GitHub Copilot adhd rules, GitHub Copilot action-first output, GitHub Copilot ai coding assistant, adhd-mode GitHub Copilot, make GitHub Copilot adhd friendly">
+<meta name="author" content="adhd-mode contributors">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<link rel="canonical" href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ADHD Copilot instructions — adhd-mode | GitHub Copilot ADHD-Friendly Output Rules">
+<meta property="og:description" content="ADHD-friendly output rules for GitHub Copilot. Make Copilot Chat lead with action, number steps, and stop wrapping answers in filler. One .github/copilot-instructions.md file.">
+<meta property="og:url" content="https://devanimecx.github.io/adhd-mode/pages/copilot.html">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
+<meta property="og:site_name" content="adhd-mode">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ADHD Copilot instructions — adhd-mode | GitHub Copilot ADHD-Friendly Output Rules">
+<meta name="twitter:description" content="ADHD-friendly output rules for GitHub Copilot. Make Copilot Chat lead with action, number steps, and stop wrapping answers in filler. One .github/copilot-instructions.md file.">
+<meta name="twitter:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants. One AGENTS.md file works in 20+ tools.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.0.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in GitHub Copilot?", "acceptedAnswer": {"@type": "Answer", "text": "Place a copilot-instructions.md file in .github/. Run: mkdir -p .github && curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/copilot/copilot-instructions.md"}}, {"@type": "Question", "name": "Does Copilot cloud agent support AGENTS.md?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. GitHub's documentation lists AGENTS.md as 'agent instructions' for the Copilot cloud agent. Placing AGENTS.md at the repo root covers the cloud agent automatically."}}, {"@type": "Question", "name": "Are Copilot instructions always on?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. copilot-instructions.md applies to all Copilot requests in the repository. There's no need to invoke anything \u2014 it's automatic."}}, {"@type": "Question", "name": "Do Copilot instructions work in VS Code Copilot Chat?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The repository-wide copilot-instructions.md file applies to Copilot Chat in VS Code, Visual Studio, and on GitHub.com."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"adhd-mode","item":"https://devanimecx.github.io/adhd-mode/"},{"@type":"ListItem","position":2,"name":"GitHub Copilot","item":"https://devanimecx.github.io/adhd-mode/pages/copilot.html"}]}</script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e14;--bg2:#0d1117;--surface:rgba(22,27,34,0.6);--surface-solid:#161b22;--border:rgba(48,54,61,0.6);--border-bright:rgba(88,166,255,0.3);--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#f778ba;--radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'SF Mono','Fira Code',monospace;--maxw:920px;--glow:0 0 40px rgba(88,166,255,0.15)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* Gradient orbs background */
+body::before{content:'';position:fixed;top:-20%;left:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(88,166,255,0.08),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float1 20s ease-in-out infinite}
+body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:50%;height:50%;background:radial-gradient(circle,rgba(63,185,80,0.06),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float2 25s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+code{font-family:var(--mono);font-size:.88em;background:rgba(88,166,255,0.1);padding:2px 7px;border-radius:6px;color:var(--accent2)}
+pre{background:var(--surface-solid);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:20px 0;position:relative}
+pre code{background:none;padding:0;color:var(--text);font-size:.85em;line-height:1.6}
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,14,20,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+nav .logo{font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:8px}
+nav .logo span{background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--muted);font-size:.88rem;font-weight:600;transition:color .2s}
+nav .links a:hover{color:var(--accent)}
+nav .star-btn{background:rgba(88,166,255,0.1);border:1px solid var(--border-bright);padding:6px 16px;border-radius:20px;color:var(--accent);font-size:.85rem;font-weight:600}
+@media(max-width:640px){nav .links{display:none}}
+/* Hero */
+.hero{padding:100px 0 80px;text-align:center}
+.hero h1{font-size:3.2rem;font-weight:900;letter-spacing:-0.035em;line-height:1.1;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--purple) 50%,var(--green) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 8s ease-in-out infinite;background-size:200% 200%}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .sub{font-size:1.25rem;color:var(--muted);max-width:620px;margin:0 auto 36px}
+.hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:24px;font-size:.82rem;font-weight:600;border:1px solid var(--border);background:var(--surface);backdrop-filter:blur(10px)}
+.badge.g{color:var(--green);border-color:rgba(63,185,80,0.3)}
+.badge.b{color:var(--accent);border-color:rgba(88,166,255,0.3)}
+.badge.y{color:var(--yellow);border-color:rgba(210,153,34,0.3)}
+.badge.p{color:var(--purple);border-color:rgba(188,140,255,0.3)}
+.cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:1rem;border:none;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(88,166,255,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(88,166,255,0.4);color:#fff}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border);backdrop-filter:blur(10px)}
+.btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px);color:var(--accent)}
+/* Stats */
+.stats{display:flex;justify-content:center;gap:56px;padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:48px 0}
+.stat{text-align:center}
+.stat .num{font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
+@media(max-width:640px){.stats{flex-direction:column;gap:32px}.hero h1{font-size:2.2rem}.hero .sub{font-size:1.05rem}}
+/* Sections */
+section{padding:64px 0}
+section h2{font-size:2rem;font-weight:800;letter-spacing:-0.025em;margin-bottom:8px}
+section .sec-sub{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
+section h3{font-size:1.25rem;font-weight:700;margin:36px 0 14px}
+/* Glass cards */
+.glass{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+.glass:hover{border-color:var(--border-bright);transform:translateY(-2px)}
+/* Before/After */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.ba-card{border:1px solid;border-radius:14px;padding:24px;background:var(--surface);backdrop-filter:blur(10px)}
+.ba-card.before{border-color:rgba(248,81,73,0.3)}
+.ba-card.after{border-color:rgba(63,185,80,0.3)}
+.ba-label{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.ba-card.before .ba-label{color:var(--red)}
+.ba-card.after .ba-label{color:var(--green)}
+.ba-card blockquote{font-size:.95rem;line-height:1.7}
+.ba-card.before blockquote{color:var(--muted);font-style:italic}
+.ba-card.after blockquote{color:var(--text)}
+@media(max-width:640px){.ba-grid{grid-template-columns:1fr}}
+/* Feature grid */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0}
+.feature{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;backdrop-filter:blur(10px);transition:all .3s}
+.feature:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:var(--glow)}
+.feature .icon{font-size:1.6rem;margin-bottom:10px}
+.feature h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.feature p{font-size:.9rem;color:var(--muted);line-height:1.6}
+/* Table */
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+th{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:0.05em}
+.yes{color:var(--green);font-weight:600}.no{color:var(--red)}.partial{color:var(--yellow)}
+/* Tabs */
+.tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:0;border-bottom:2px solid var(--border);overflow-x:auto}
+.tab{padding:12px 20px;cursor:pointer;border:none;background:none;color:var(--muted);font-size:.9rem;font-weight:600;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--text)}
+.tab-panel{display:none;padding:24px 0}
+.tab-panel.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Quickstart */
+.quickstart{background:var(--surface-solid);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0}
+.quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.dots{display:flex;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
+.qs-title{font-size:.82rem;color:var(--muted);margin-left:8px;font-family:var(--mono)}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+.faq-item summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-item summary:hover{color:var(--accent)}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:var(--muted);transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item p{margin-top:14px;color:var(--muted);line-height:1.7}
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.88rem;position:relative;z-index:1}
+footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
+/* Nav links for SEO pages */
+.page-nav{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(10px)}
+.page-nav a{padding:6px 14px;border-radius:8px;font-size:.85rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
+.page-nav a:hover{color:var(--accent);border-color:var(--accent)}
+.page-nav a.current{background:rgba(88,166,255,0.15);color:var(--accent)}
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* Inline list */
+ul.inline{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+/* CTA section */
+.cta-section{text-align:center;padding:80px 0;background:linear-gradient(180deg,transparent,rgba(88,166,255,0.03));border-top:1px solid var(--border);margin-top:48px}
+</style>
+</head><body>
+<nav><div class="container">
+<div class="logo">⚡ <span>adhd-mode</span></div>
+<div class="links">
+<a href="https://devanimecx.github.io/adhd-mode/">Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="star-btn">★ Star</a>
+</div>
+</div></nav>
+<div class="container">
+
+<div class="hero reveal" style="padding:60px 0 40px;">
+<h1 style="font-size:2.4rem;">ADHD-friendly output rules for <span class="grad">GitHub Copilot</span></h1>
+<p class="sub">ADHD-friendly output rules for GitHub Copilot. Make Copilot Chat lead with action, number steps, and stop wrapping answers in filler. One .github/copilot-instructions.md file. One file. Always on. No slash command. No plugin marketplace.</p>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">Install for GitHub Copilot →</a>
+</div>
+</div>
+
+<section class="reveal">
+<h2>What this does</h2>
+<p class="sec-sub">GitHub Copilot is a powerful AI coding tool, but it buries answers behind preamble, tangents, and closing pleasantries. adhd-mode fixes this by placing one file that GitHub Copilot reads automatically, shaping every response to be action-first, numbered, and free of filler.</p>
+<div class="features">
+<div class="feature"><div class="icon">⚡</div><h4>Action-first</h4><p>First line = something you can do now. Not context. Not a plan. The action.</p></div>
+<div class="feature"><div class="icon">🔢</div><h4>Numbered steps</h4><p>Multi-step tasks become numbered lists with one bounded action per step.</p></div>
+<div class="feature"><div class="icon">🔁</div><h4>Anti-decay</h4><p>Rules persist across turns with explicit re-injection. No fading after 5 turns.</p></div>
+<div class="feature"><div class="icon">📐</div><h4>Scope by shape</h4><p>Quick / Medium / Large instead of fabricated time estimates.</p></div>
+</div>
+</section>
+
+<section id="install" class="reveal">
+<h2>Install for GitHub Copilot</h2>
+<p class="sec-sub">Copilot reads .github/copilot-instructions.md for repository-wide custom instructions. Copilot's cloud agent also reads AGENTS.md natively. The instructions are advisory — they shape but don't strictly control output. They can get diluted in long chats.</p>
+<div class="quickstart">
+<div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">GitHub Copilot install</span></div>
+<pre><code>mkdir -p .github
+curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/copilot/copilot-instructions.md</code></pre>
+</div>
+<h3>Or use the universal AGENTS.md file</h3>
+<pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
+<p style="color:var(--muted);margin-top:8px;">The file is at <code>rules/copilot/copilot-instructions.md</code>. Restart GitHub Copilot after installing.</p>
+</section>
+
+<section class="reveal">
+<h2>Before / After in GitHub Copilot</h2>
+<div class="ba-grid">
+<div class="ba-card before"><div class="ba-label">⚠ Before (default GitHub Copilot)</div><blockquote>Great question! Let me take a look at your authentication flow. There are a few moving pieces here... [47 lines of context] ... Hope this helps! Let me know if you want to dig deeper.</blockquote></div>
+<div class="ba-card after"><div class="ba-label">✓ After (adhd-mode)</div><blockquote>Run <code>npm install jsonwebtoken@latest</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open <code>src/auth.ts</code><br>2. Replace <code>verifyToken</code> (lines 42-58)<br>3. Run <code>npm test -- auth.spec.ts</code><br><br>Next: paste the first failing line.</blockquote></div>
+</div>
+</section>
+
+<section class="reveal">
+<h2>The 10 rules applied in GitHub Copilot</h2>
+<table>
+<thead><tr><th>#</th><th>Rule</th><th>What changes in GitHub Copilot</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--accent);font-weight:700">1</td><td>Lead with the next action</td><td>GitHub Copilot starts every response with the action, not context</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">2</td><td>Number multi-step tasks</td><td>Tasks become numbered lists, not prose paragraphs</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">3</td><td>End with one next action</td><td>Every response ends with one thing you can do in under 2 min</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">4</td><td>Suppress tangents</td><td>No "by the way" sidebars — finish the first task first</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">5</td><td>Restate state</td><td>GitHub Copilot tells you "Step 3 of 5 done" every turn</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">6</td><td>Scope by shape</td><td>Quick / Medium / Large — not fabricated "15 min"</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">7</td><td>Make wins visible</td><td>GitHub Copilot shows what now works, concretely</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">8</td><td>Matter-of-fact errors</td><td>No "uh oh" — just cause + fix</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">9</td><td>Cap lists at 5</td><td>Splits into "now" vs "later" to prevent overwhelm</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">10</td><td>No preamble, no closers</td><td>No "Great question!" or "Hope this helps!"</td></tr>
+</tbody>
+</table>
+<p><a href="https://github.com/DevAnimecx/adhd-mode/blob/main/rules/copilot/copilot-instructions.md">View the GitHub Copilot rule file on GitHub →</a></p>
+</section>
+
+<section class="reveal">
+<h2>How GitHub Copilot loads the rules</h2>
+<p class="sec-sub">Technical details on how GitHub Copilot discovers and applies the output rules.</p>
+<p>Copilot reads .github/copilot-instructions.md for repository-wide custom instructions. Copilot's cloud agent also reads AGENTS.md natively. The instructions are advisory — they shape but don't strictly control output. They can get diluted in long chats.</p>
+<p>The file uses GitHub Copilot's native rule-loading mechanism. Once placed at the correct path, GitHub Copilot reads it on startup and applies the rules to every AI interaction — chat, inline completions, and code generation. The rules stay on until you say "stop adhd mode" in chat.</p>
+</section>
+
+<section class="reveal">
+<h2>Frequently asked questions about GitHub Copilot + adhd-mode</h2>
