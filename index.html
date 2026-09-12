@@ -2,511 +2,282 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>adhd-mode — ADHD-Friendly Output Rules for AI Coding Tools | Cursor, Copilot, Windsurf, Gemini, Codex</title>
-<meta name="description" content="ADHD-friendly output rules for Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, Claude Code, and 20+ AI coding tools. Always on. One file. No slash command. Anti-decay. Action-first.">
+<meta name="description" content="ADHD-friendly output rules for Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, Claude Code, and 20+ AI coding tools. Always on. One file. Anti-decay. Action-first.">
 <meta name="keywords" content="adhd cursor rules, adhd copilot instructions, adhd ai coding, agents.md adhd, i-have-adhd alternative, make ai coding adhd friendly, action-first ai output, stop ai rambling, concise ai coding output, adhd-mode">
 <meta name="author" content="adhd-mode contributors">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
 <link rel="canonical" href="https://devanimecx.github.io/adhd-mode/">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="adhd-mode — ADHD-Friendly Output for Every AI Coding Tool">
-<meta property="og:description" content="One file. 10 rules. 20+ tools. Always on. Stops your AI coding assistant from burying the answer behind 'Great question!' and 'Hope this helps!'">
+<meta property="og:title" content="adhd-mode — ADHD-Friendly Output Rules for AI Coding Tools | Cursor, Copilot, Windsurf, Gemini, Codex">
+<meta property="og:description" content="ADHD-friendly output rules for Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, Claude Code, and 20+ AI coding tools. Always on. One file. Anti-decay. Action-first.">
 <meta property="og:url" content="https://devanimecx.github.io/adhd-mode/">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
 <meta property="og:site_name" content="adhd-mode">
-
-<!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="adhd-mode — ADHD-Friendly Output for Every AI Coding Tool">
-<meta name="twitter:description" content="One file. 10 rules. 20+ tools. Always on. Stops AI from burying the answer.">
+<meta name="twitter:title" content="adhd-mode — ADHD-Friendly Output Rules for AI Coding Tools | Cursor, Copilot, Windsurf, Gemini, Codex">
+<meta name="twitter:description" content="ADHD-friendly output rules for Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, Claude Code, and 20+ AI coding tools. Always on. One file. Anti-decay. Action-first.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
-
-<!-- JSON-LD: SoftwareApplication -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "adhd-mode",
-  "description": "ADHD-friendly output rules for AI coding assistants. One AGENTS.md file works in 20+ tools including Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, and Claude Code. Always on, no slash command.",
-  "url": "https://devanimecx.github.io/adhd-mode/",
-  "applicationCategory": "DeveloperApplication",
-  "operatingSystem": "Any",
-  "softwareVersion": "2.0.0",
-  "license": "https://opensource.org/licenses/MIT",
-  "codeRepository": "https://github.com/DevAnimecx/adhd-mode",
-  "downloadUrl": "https://github.com/DevAnimecx/adhd-mode",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "ratingCount": "1",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
-  "featureList": [
-    "10 ADHD-friendly output rules (action-first, numbered steps, no preamble)",
-    "Works in 20+ tools via AGENTS.md (Codex, Cursor, Copilot, Windsurf, Gemini, Aider, Zed)",
-    "Anti-decay: rules persist across turns with re-injection mechanism",
-    "Scope by shape, not fabricated time estimates",
-    "One-command installer with safe merge and backup",
-    "Single-source build with parity CI",
-    "Diagnosis-free framing: works as 'action-first mode' for anyone"
-  ]
-}
-</script>
-
-<!-- JSON-LD: FAQPage -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "What is adhd-mode?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "adhd-mode is an open-source project that ships 10 output rules making AI coding assistants produce ADHD-friendly output. You place a single AGENTS.md file in your repository root, and every AI coding tool that reads it — Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Aider, Zed, and 20+ others — automatically shapes its output to be action-first, numbered, and free of preamble. The rules are adapted from i-have-adhd (MIT)."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How is adhd-mode different from i-have-adhd?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "i-have-adhd is a skill you invoke each session (/i-have-adhd in Claude Code, $i-have-adhd in Codex). adhd-mode is always on — you paste one file and every response is ADHD-shaped from the first message. adhd-mode also fixes three problems users reported with the original: rule decay (rules stop working after a few turns), fabricated time estimates (the model invents inaccurate durations), and bloat (8.7k lines across 59 files vs one file). adhd-mode also covers tools the original doesn't fully support: GitHub Copilot IDE chat, Windsurf modern format, and Gemini CLI."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "How do I install adhd-mode?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The fastest install is one command: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md — then restart your editor. For Claude Code, also grab CLAUDE.md. Or use the one-command installer: curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash"
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Which AI coding tools does adhd-mode support?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "adhd-mode supports Codex, Cursor, GitHub Copilot (cloud agent and IDE), Windsurf, Gemini CLI, Claude Code, Aider, Zed, Factory, Jules, Devin, Amp, RooCode, and 20+ other tools that read AGENTS.md natively. The AGENTS.md file at the repo root is the primary delivery; per-tool files provide the strongest always-on guarantee."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Does adhd-mode stop working after a few turns?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. adhd-mode includes an anti-decay mechanism: explicit re-injection instructions that tell the agent to re-apply all rules from scratch when the user says 'adhd mode' again. This addresses the #1 complaint about the original i-have-adhd, where users reported rules fading after a few turns. adhd-mode ships as an output style (always loaded) rather than a one-shot skill prompt."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do I need an ADHD diagnosis to use adhd-mode?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. The rules help anyone who wants action-first, no-filler AI output. adhd-mode also works under the neutral name 'action-first mode' for users who prefer not to have ADHD mentioned in their AI context. The output shape (optimized for working memory, dopamine, and task-starting) benefits everyone."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Is adhd-mode free?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. It is MIT licensed. The 10 output rules are adapted from i-have-adhd (also MIT). There are no paid features, accounts, or telemetry."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Why does adhd-mode not use time estimates like the original?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "The #3 complaint about the original i-have-adhd was that the model fabricates inaccurate time estimates — users called them 'hilariously inept.' adhd-mode replaces fabricated clock estimates with scope-by-shape: Quick (one file, one function), Medium (2-3 files or a new dependency), Large (cross-cutting change). This gives actionable sizing without false precision."
-      }
-    }
-  ]
-}
-</script>
-
-<!-- JSON-LD: HowTo -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "HowTo",
-  "name": "How to install adhd-mode in any AI coding tool",
-  "description": "Install ADHD-friendly output rules in your AI coding assistant with one command.",
-  "step": [
-    {
-      "@type": "HowToStep",
-      "position": 1,
-      "name": "Download AGENTS.md",
-      "text": "Run curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md to place the file in your project root."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 2,
-      "name": "Restart your editor",
-      "text": "Restart Cursor, Copilot, Windsurf, Gemini CLI, or Codex. The tool reads AGENTS.md automatically on startup."
-    },
-    {
-      "@type": "HowToStep",
-      "position": 3,
-      "name": "Test with a prompt",
-      "text": "Ask your AI assistant to fix a bug. Instead of 'Great question! Let me think about this...' you'll get action-first, numbered steps with a concrete next action."
-    }
-  ],
-  "totalTime": "PT1M"
-}
-</script>
-
-<!-- JSON-LD: BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "GitHub",
-      "item": "https://github.com/DevAnimecx"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "adhd-mode",
-      "item": "https://github.com/DevAnimecx/adhd-mode"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Landing Page",
-      "item": "https://devanimecx.github.io/adhd-mode/"
-    }
-  ]
-}
-</script>
-
-
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants. One AGENTS.md file works in 20+ tools.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.0.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "adhd-mode is an open-source project that ships 10 output rules making AI coding assistants produce ADHD-friendly output. You place a single AGENTS.md file in your repository root, and every AI coding tool that reads it \u2014 Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Aider, Zed, and 20+ others \u2014 automatically shapes its output to be action-first, numbered, and free of preamble. The rules are adapted from i-have-adhd (MIT)."}}, {"@type": "Question", "name": "How is adhd-mode different from i-have-adhd?", "acceptedAnswer": {"@type": "Answer", "text": "i-have-adhd is a skill you invoke each session (/i-have-adhd in Claude Code, $i-have-adhd in Codex). adhd-mode is always on \u2014 you paste one file and every response is ADHD-shaped from the first message. adhd-mode also fixes three problems users reported with the original: rule decay (rules stop working after a few turns), fabricated time estimates (the model invents inaccurate durations), and bloat (8.7k lines across 59 files vs one file). adhd-mode also covers tools the original doesn't fully support: GitHub Copilot IDE chat, Windsurf modern format, and Gemini CLI."}}, {"@type": "Question", "name": "How do I install adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "The fastest install is one command: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md \u2014 then restart your editor. For Claude Code, also grab CLAUDE.md. Or use the one-command installer: curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash"}}, {"@type": "Question", "name": "Which AI coding tools does adhd-mode support?", "acceptedAnswer": {"@type": "Answer", "text": "adhd-mode supports Codex, Cursor, GitHub Copilot (cloud agent and IDE), Windsurf, Gemini CLI, Claude Code, Aider, Zed, Factory, Jules, Devin, Amp, RooCode, and 20+ other tools that read AGENTS.md natively. The AGENTS.md file at the repo root is the primary delivery; per-tool files provide the strongest always-on guarantee."}}, {"@type": "Question", "name": "Does adhd-mode stop working after a few turns?", "acceptedAnswer": {"@type": "Answer", "text": "No. adhd-mode includes an anti-decay mechanism: explicit re-injection instructions that tell the agent to re-apply all rules from scratch when the user says 'adhd mode' again. This addresses the #1 complaint about the original i-have-adhd, where users reported rules fading after a few turns. adhd-mode ships as an output style (always loaded) rather than a one-shot skill prompt."}}, {"@type": "Question", "name": "Do I need an ADHD diagnosis to use adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "No. The rules help anyone who wants action-first, no-filler AI output. adhd-mode also works under the neutral name 'action-first mode' for users who prefer not to have ADHD mentioned in their AI context. The output shape (optimized for working memory, dopamine, and task-starting) benefits everyone."}}, {"@type": "Question", "name": "Why doesn't adhd-mode use time estimates like the original?", "acceptedAnswer": {"@type": "Answer", "text": "The #3 complaint about the original i-have-adhd was that the model fabricates inaccurate time estimates \u2014 users called them 'hilariously inept.' adhd-mode replaces fabricated clock estimates with scope-by-shape: Quick (one file, one function), Medium (2-3 files or a new dependency), Large (cross-cutting change). This gives actionable sizing without false precision."}}, {"@type": "Question", "name": "Is adhd-mode free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. It is MIT licensed. The 10 output rules are adapted from i-have-adhd (also MIT). There are no paid features, accounts, or telemetry."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"HowTo","name":"How to install adhd-mode in any AI coding tool","description":"Install ADHD-friendly output rules in your AI coding assistant with one command.","step":[{"@type":"HowToStep","position":1,"name":"Download AGENTS.md","text":"Run curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md to place the file in your project root."},{"@type":"HowToStep","position":2,"name":"Restart your editor","text":"Restart Cursor, Copilot, Windsurf, Gemini CLI, or Codex. The tool reads AGENTS.md automatically on startup."},{"@type":"HowToStep","position":3,"name":"Test with a prompt","text":"Ask your AI assistant to fix a bug. Instead of Great question! Let me think about this... you will get action-first, numbered steps with a concrete next action."}],"totalTime":"PT1M"}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"GitHub","item":"https://github.com/DevAnimecx"},{"@type":"ListItem","position":2,"name":"adhd-mode","item":"https://github.com/DevAnimecx/adhd-mode"},{"@type":"ListItem","position":3,"name":"Landing Page","item":"https://devanimecx.github.io/adhd-mode/"}]}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{background:#0d1117;color:#e6edf3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;line-height:1.6}
-a{color:#58a6ff;text-decoration:none}a:hover{text-decoration:underline}
-code{background:#161b22;padding:2px 6px;border-radius:4px;border:1px solid #30363d;font-family:monospace;font-size:.9em}
-pre{background:#161b22;border:1px solid #30363d;border-radius:8px;padding:16px;overflow-x:auto;margin:16px 0}
-pre code{background:none;border:none;padding:0;font-size:.85em}
-.container{max-width:896px;margin:0 auto;padding:0 24px}
-.hero{padding:80px 0 60px;text-align:center}
-.hero h1{font-size:2.5rem;font-weight:800;margin-bottom:16px}
-.hero h1 span{background:linear-gradient(135deg,#58a6ff,#3fb950);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.hero p{font-size:1.2rem;color:#8b949e;max-width:600px;margin:0 auto 32px}
-.badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
-.badge{padding:6px 14px;border-radius:20px;font-size:.85rem;font-weight:600;border:1px solid}
-.bg{color:#3fb950;border-color:#3fb950}.bb{color:#58a6ff;border-color:#58a6ff}.by{color:#d29922;border-color:#d29922}
-.cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn{padding:12px 24px;border-radius:8px;font-weight:600;font-size:1rem;border:1px solid #30363d;display:inline-block}
-.btn-p{background:#58a6ff;color:#fff;border-color:#58a6ff}.btn-s{background:#161b22;color:#e6edf3}
-section{padding:60px 0}section h2{font-size:1.8rem;margin-bottom:24px}section h3{font-size:1.2rem;margin:32px 0 12px}
-.ba{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:24px 0}
-.ba-c{border:1px solid;border-radius:12px;padding:24px;background:#161b22}
-.ba-b{border-color:#f85149}.ba-a{border-color:#3fb950}
-.ba-l{font-size:.8rem;font-weight:700;text-transform:uppercase;margin-bottom:12px}
-.ba-b .ba-l{color:#f85149}.ba-a .ba-l{color:#3fb950}
-.ba-c blockquote{font-style:italic;color:#8b949e}.ba-a blockquote{color:#e6edf3;font-style:normal}
-table{width:100%;border-collapse:collapse;margin:24px 0}
-th,td{text-align:left;padding:12px 16px;border-bottom:1px solid #30363d}
-th{font-weight:700;color:#8b949e;font-size:.85rem;text-transform:uppercase}
-.yes{color:#3fb950;font-weight:600}.no{color:#f85149}.partial{color:#d29922}
-.feat{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0}
-.fc{border:1px solid #30363d;border-radius:12px;padding:20px;background:#161b22}
-.fc h4{margin-bottom:6px}.fc p{font-size:.9rem;color:#8b949e}.fc .i{font-size:1.5rem;margin-bottom:8px}
-.stats{display:flex;justify-content:center;gap:48px;padding:40px 0;border-top:1px solid #30363d;border-bottom:1px solid #30363d;margin:40px 0;text-align:center}
-.stat .n{font-size:2.2rem;font-weight:800;color:#58a6ff}.stat .l{font-size:.85rem;color:#8b949e;text-transform:uppercase}
-.faq{border-bottom:1px solid #30363d;padding:16px 0}
-.faq summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none}
-.faq summary::after{content:' +';font-size:1.3rem;color:#8b949e}
-.faq[open] summary::after{content:' −'}
-.faq summary::-webkit-details-marker{display:none}
-.faq p{margin-top:12px;color:#8b949e}
-footer{padding:40px 0;border-top:1px solid #30363d;text-align:center;color:#8b949e;font-size:.9rem}
-nav{position:sticky;top:0;background:#0d1117;border-bottom:1px solid #30363d;padding:12px 0;z-index:100}
-nav .container{display:flex;justify-content:space-between;align-items:center}
-nav .logo{font-weight:800;font-size:1.2rem}
-nav .links{display:flex;gap:20px}nav .links a{color:#8b949e;font-size:.9rem;font-weight:600}
-.qs{background:#161b22;border:1px solid #30363d;border-radius:12px;padding:24px;margin:24px 0}
-.tabs{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:16px;border-bottom:1px solid #30363d}
-.tab{padding:10px 16px;cursor:pointer;border:none;background:none;color:#8b949e;font-size:.9rem;font-weight:600;border-bottom:2px solid transparent}
-.tab.active{color:#58a6ff;border-bottom-color:#58a6ff}
-.tp{display:none}.tp.active{display:block}
-@media(max-width:640px){.ba{grid-template-columns:1fr}.stats{flex-direction:column;gap:24px}nav .links{display:none}.hero h1{font-size:1.8rem}}
-</style></head>
-<body>
-
-<nav>
-  <div class="container">
-    <div class="logo">⚡ adhd-mode</div>
-    <div class="links">
-      <a href="#problem">Problem</a>
-      <a href="#rules">Rules</a>
-      <a href="#install">Install</a>
-      <a href="#compare">Compare</a>
-      <a href="#faq">FAQ</a>
-      <a href="https://github.com/DevAnimecx/adhd-mode">GitHub</a>
-    </div>
-  </div>
-</nav>
-
+:root{--bg:#0a0e14;--bg2:#0d1117;--surface:rgba(22,27,34,0.6);--surface-solid:#161b22;--border:rgba(48,54,61,0.6);--border-bright:rgba(88,166,255,0.3);--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#f778ba;--radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'SF Mono','Fira Code',monospace;--maxw:920px;--glow:0 0 40px rgba(88,166,255,0.15)}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+/* Gradient orbs background */
+body::before{content:'';position:fixed;top:-20%;left:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(88,166,255,0.08),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float1 20s ease-in-out infinite}
+body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:50%;height:50%;background:radial-gradient(circle,rgba(63,185,80,0.06),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float2 25s ease-in-out infinite}
+@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
+@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
+code{font-family:var(--mono);font-size:.88em;background:rgba(88,166,255,0.1);padding:2px 7px;border-radius:6px;color:var(--accent2)}
+pre{background:var(--surface-solid);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:20px 0;position:relative}
+pre code{background:none;padding:0;color:var(--text);font-size:.85em;line-height:1.6}
+/* Nav */
+nav{position:sticky;top:0;z-index:100;background:rgba(10,14,20,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
+nav .logo{font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:8px}
+nav .logo span{background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+nav .links{display:flex;gap:24px;align-items:center}
+nav .links a{color:var(--muted);font-size:.88rem;font-weight:600;transition:color .2s}
+nav .links a:hover{color:var(--accent)}
+nav .star-btn{background:rgba(88,166,255,0.1);border:1px solid var(--border-bright);padding:6px 16px;border-radius:20px;color:var(--accent);font-size:.85rem;font-weight:600}
+@media(max-width:640px){nav .links{display:none}}
+/* Hero */
+.hero{padding:100px 0 80px;text-align:center}
+.hero h1{font-size:3.2rem;font-weight:900;letter-spacing:-0.035em;line-height:1.1;margin-bottom:20px}
+.hero h1 .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--purple) 50%,var(--green) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 8s ease-in-out infinite;background-size:200% 200%}
+@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.hero .sub{font-size:1.25rem;color:var(--muted);max-width:620px;margin:0 auto 36px}
+.hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
+.badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:24px;font-size:.82rem;font-weight:600;border:1px solid var(--border);background:var(--surface);backdrop-filter:blur(10px)}
+.badge.g{color:var(--green);border-color:rgba(63,185,80,0.3)}
+.badge.b{color:var(--accent);border-color:rgba(88,166,255,0.3)}
+.badge.y{color:var(--yellow);border-color:rgba(210,153,34,0.3)}
+.badge.p{color:var(--purple);border-color:rgba(188,140,255,0.3)}
+.cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:1rem;border:none;cursor:pointer;text-decoration:none;transition:all .25s}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(88,166,255,0.3)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(88,166,255,0.4);color:#fff}
+.btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border);backdrop-filter:blur(10px)}
+.btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px);color:var(--accent)}
+/* Stats */
+.stats{display:flex;justify-content:center;gap:56px;padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:48px 0}
+.stat{text-align:center}
+.stat .num{font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
+@media(max-width:640px){.stats{flex-direction:column;gap:32px}.hero h1{font-size:2.2rem}.hero .sub{font-size:1.05rem}}
+/* Sections */
+section{padding:64px 0}
+section h2{font-size:2rem;font-weight:800;letter-spacing:-0.025em;margin-bottom:8px}
+section .sec-sub{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
+section h3{font-size:1.25rem;font-weight:700;margin:36px 0 14px}
+/* Glass cards */
+.glass{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
+.glass:hover{border-color:var(--border-bright);transform:translateY(-2px)}
+/* Before/After */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
+.ba-card{border:1px solid;border-radius:14px;padding:24px;background:var(--surface);backdrop-filter:blur(10px)}
+.ba-card.before{border-color:rgba(248,81,73,0.3)}
+.ba-card.after{border-color:rgba(63,185,80,0.3)}
+.ba-label{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.ba-card.before .ba-label{color:var(--red)}
+.ba-card.after .ba-label{color:var(--green)}
+.ba-card blockquote{font-size:.95rem;line-height:1.7}
+.ba-card.before blockquote{color:var(--muted);font-style:italic}
+.ba-card.after blockquote{color:var(--text)}
+@media(max-width:640px){.ba-grid{grid-template-columns:1fr}}
+/* Feature grid */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0}
+.feature{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;backdrop-filter:blur(10px);transition:all .3s}
+.feature:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:var(--glow)}
+.feature .icon{font-size:1.6rem;margin-bottom:10px}
+.feature h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.feature p{font-size:.9rem;color:var(--muted);line-height:1.6}
+/* Table */
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
+th{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:0.05em}
+.yes{color:var(--green);font-weight:600}.no{color:var(--red)}.partial{color:var(--yellow)}
+/* Tabs */
+.tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:0;border-bottom:2px solid var(--border);overflow-x:auto}
+.tab{padding:12px 20px;cursor:pointer;border:none;background:none;color:var(--muted);font-size:.9rem;font-weight:600;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--text)}
+.tab-panel{display:none;padding:24px 0}
+.tab-panel.active{display:block;animation:fadeIn .3s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+/* Quickstart */
+.quickstart{background:var(--surface-solid);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0}
+.quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.dots{display:flex;gap:6px}
+.dot{width:12px;height:12px;border-radius:50%}
+.dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
+.qs-title{font-size:.82rem;color:var(--muted);margin-left:8px;font-family:var(--mono)}
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
+.faq-item summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-item summary:hover{color:var(--accent)}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:var(--muted);transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item p{margin-top:14px;color:var(--muted);line-height:1.7}
+/* Footer */
+footer{padding:48px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.88rem;position:relative;z-index:1}
+footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
+/* Nav links for SEO pages */
+.page-nav{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(10px)}
+.page-nav a{padding:6px 14px;border-radius:8px;font-size:.85rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
+.page-nav a:hover{color:var(--accent);border-color:var(--accent)}
+.page-nav a.current{background:rgba(88,166,255,0.15);color:var(--accent)}
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+/* Inline list */
+ul.inline{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
+ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
+/* CTA section */
+.cta-section{text-align:center;padding:80px 0;background:linear-gradient(180deg,transparent,rgba(88,166,255,0.03));border-top:1px solid var(--border);margin-top:48px}
+</style>
+</head><body>
+<nav><div class="container">
+<div class="logo">⚡ <span>adhd-mode</span></div>
+<div class="links">
+<a href="https://devanimecx.github.io/adhd-mode/">Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="star-btn">★ Star</a>
+</div>
+</div></nav>
 <div class="container">
 
-<!-- HERO -->
-<div class="hero">
-  <h1>AI output that <span class="highlight">respects your working memory</span></h1>
-  <p class="tagline">Drop one file in your repo. Every AI coding tool — Cursor, Copilot, Windsurf, Gemini, Codex, Claude, and 20+ more — stops burying the answer and starts leading with action. Always on. No slash command.</p>
-  <div class="badges">
-    <span class="badge badge-green">✓ 20+ tools</span>
-    <span class="badge badge-blue">✓ Always on</span>
-    <span class="badge badge-yellow">✓ Anti-decay</span>
-    <span class="badge badge-green">✓ MIT free</span>
-  </div>
-  <div class="cta-group">
-    <a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
-    <a href="#install" class="btn btn-secondary">Install in 30 seconds</a>
-  </div>
+<div class="hero reveal">
+<h1>AI output that <span class="grad">respects your working memory</span></h1>
+<p class="sub">Drop one file in your repo. Every AI coding tool — Cursor, Copilot, Windsurf, Gemini, Codex, Claude, and 20+ more — stops burying the answer and starts leading with action. Always on. No slash command.</p>
+<div class="badges">
+<span class="badge g">✓ 20+ tools</span>
+<span class="badge b">✓ Always on</span>
+<span class="badge y">✓ Anti-decay</span>
+<span class="badge p">✓ MIT free</span>
+</div>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">Install in 30 seconds →</a>
+</div>
 </div>
 
-<!-- STATS STRIP -->
-<div class="stats">
-  <div class="stat"><div class="num">10</div><div class="label">Output Rules</div></div>
-  <div class="stat"><div class="num">20+</div><div class="label">Tools Supported</div></div>
-  <div class="stat"><div class="num">1</div><div class="label">File to Install</div></div>
-  <div class="stat"><div class="num">0</div><div class="label">Dependencies</div></div>
+<div class="stats reveal">
+<div class="stat"><div class="num" data-count="10">0</div><div class="label">Output Rules</div></div>
+<div class="stat"><div class="num" data-count="20">0</div><div class="label">+ Tools Supported</div></div>
+<div class="stat"><div class="num" data-count="1">0</div><div class="label">File to Install</div></div>
+<div class="stat"><div class="num" data-count="0">0</div><div class="label">Dependencies</div></div>
 </div>
 
-<!-- PROBLEM -->
-<section id="problem">
-  <h2>The problem</h2>
-  <p>Every AI coding assistant wastes your time with filler:</p>
-  <div class="ba-grid">
-    <div class="ba-card before">
-      <div class="label">⚠ Before (any tool)</div>
-      <blockquote>Great question! Let me take a look at your authentication flow. There are a few moving pieces here: the middleware, the token verification, and the cookie handling. Looking at <code>src/auth.ts</code>, the <code>verifyToken</code> function (around lines 42-58) seems to be using an older <code>jsonwebtoken</code> API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.</blockquote>
-    </div>
-    <div class="ba-card after">
-      <div class="label">✓ After (adhd-mode)</div>
-      <blockquote>Run <code>npm install jsonwebtoken@latest</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open <code>src/auth.ts</code><br>2. Replace <code>verifyToken</code> (lines 42-58) with the snippet below<br>3. Run <code>npm test -- auth.spec.ts</code><br><br>Next: paste the first failing line if any test fails.</blockquote>
-    </div>
-  </div>
-  <p>You don't need shorter answers. You need answers shaped so an ADHD brain can <strong>act on them</strong> — lead with the next action, number the steps, end with one thing to do next.</p>
-</section>
-
-<!-- WHAT CHANGED (v2.0) -->
-<section id="whats-new" style="background: var(--surface); border-radius: 12px; padding: 40px; margin: 24px 0;">
-  <h2 style="font-size: 1.6rem;">What's new in v2.0 (beats the original)</h2>
-  <p>Based on analysis of 324 HN comments and Reddit threads about <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (42k+ stars), adhd-mode v2.0 fixes the three biggest complaints:</p>
-  <div class="features">
-    <div class="feature">
-      <div class="icon">🔁</div>
-      <h4>Anti-decay</h4>
-      <p>The #1 complaint: rules stop working after a few turns. adhd-mode includes explicit re-injection instructions and ships as an always-on output style, not a one-shot skill prompt.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">📐</div>
-      <h4>Scope by shape</h4>
-      <p>The #3 complaint: model time estimates are "hilariously inept." We replaced fabricated clock estimates with scope-by-shape: Quick, Medium, Large. Actionable sizing without false precision.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">📄</div>
-      <h4>One file, zero bloat</h4>
-      <p>The #2 complaint: "8.7k lines across 59 files." adhd-mode is one <code>AGENTS.md</code> file. One curl. One paste. Zero dependencies. 140 lines of rules.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🧠</div>
-      <h4>Diagnosis-free</h4>
-      <p>Some users can't have "ADHD" in their AI context. adhd-mode also works under the neutral name "action-first mode." The rules help everyone who wants no-filler output.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🔒</div>
-      <h4>Pinned URLs</h4>
-      <p>Install commands always pin exact GitHub raw URLs. No paraphrased curl commands that could resolve to a squatted repo. Security-first install.</p>
-    </div>
-    <div class="feature">
-      <div class="icon">🌐</div>
-      <h4>20+ tools, one file</h4>
-      <p>AGENTS.md is a Linux Foundation standard. Codex, Cursor, Copilot, Windsurf, Gemini, Aider, Zed — all read it natively. No per-tool plugin installs.</p>
-    </div>
-  </div>
-</section>
-
-<!-- RULES -->
-<section id="rules">
-  <h2>The 10 rules</h2>
-  <table class="rules-table">
-    <thead><tr><th>#</th><th>Rule</th><th>What it does</th></tr></thead>
-    <tbody>
-      <tr><td class="num">1</td><td>Lead with the next action</td><td>First line = something you can do now</td></tr>
-      <tr><td class="num">2</td><td>Number multi-step tasks</td><td>Numbered list, one bounded action per step</td></tr>
-      <tr><td class="num">3</td><td>End with one concrete next action</td><td>One thing under 2 min</td></tr>
-      <tr><td class="num">4</td><td>Suppress tangents</td><td>Finish first, offer second separately</td></tr>
-      <tr><td class="num">5</td><td>Restate state every turn</td><td>"Step 3 of 5 done. Next: X."</td></tr>
-      <tr><td class="num">6</td><td>Scope by shape, not time</td><td>Quick / Medium / Large — not "15 min"</td></tr>
-      <tr><td class="num">7</td><td>Make wins visible</td><td>Show what works, concretely</td></tr>
-      <tr><td class="num">8</td><td>Matter-of-fact errors</td><td>No "uh oh." Cause + fix.</td></tr>
-      <tr><td class="num">9</td><td>Cap lists at 5 items</td><td>Split into "now" vs "later"</td></tr>
-      <tr><td class="num">10</td><td>No preamble, no recap, no closers</td><td>Start with answer, end when done</td></tr>
-    </tbody>
-  </table>
-  <p>Plus a <strong>pre-send check</strong> (5 deletions before sending) and <strong>6 override conditions</strong> (when to break the rules). Full text in every rule file on <a href="https://github.com/DevAnimecx/adhd-mode">GitHub</a>.</p>
-</section>
-
-<!-- INSTALL -->
-<section id="install">
-  <h2>Install in 30 seconds</h2>
-  
-  <div class="quickstart">
-    <div class="header">
-      <div class="dots"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
-      <span class="title">Quickstart — one file, 20+ tools</span>
-    </div>
-    <pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
-    <p style="color: var(--text-muted); margin-top: 8px;">That's it. Codex, Cursor, Copilot, Windsurf, Gemini, Aider, Zed — all read it automatically. Restart your editor.</p>
-  </div>
-
-  <h3>Per-tool install</h3>
-  <div class="tabs">
-    <button class="tab active" onclick="showTab(event,'cursor')">Cursor</button>
-    <button class="tab" onclick="showTab(event,'copilot')">Copilot</button>
-    <button class="tab" onclick="showTab(event,'windsurf')">Windsurf</button>
-    <button class="tab" onclick="showTab(event,'gemini')">Gemini</button>
-    <button class="tab" onclick="showTab(event,'codex')">Codex</button>
-    <button class="tab" onclick="showTab(event,'claude')">Claude Code</button>
-  </div>
-
-  <div id="tab-cursor" class="tab-panel active">
-    <pre><code>mkdir -p .cursor/rules
-curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/cursor/adhd-mode.mdc</code></pre>
-    <p>Uses <code>alwaysApply: true</code> — injected into every Cursor Agent chat.</p>
-  </div>
-  <div id="tab-copilot" class="tab-panel">
-    <pre><code>mkdir -p .github
-curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/copilot/copilot-instructions.md</code></pre>
-    <p>Copilot cloud agent also reads <code>AGENTS.md</code> natively.</p>
-  </div>
-  <div id="tab-windsurf" class="tab-panel">
-    <pre><code>mkdir -p .windsurf/rules
-curl -o .windsurf/rules/adhd-mode.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/windsurf/rules/adhd-mode.md</code></pre>
-    <p>Uses <code>trigger: always_on</code> — included in every Cascade message.</p>
-  </div>
-  <div id="tab-gemini" class="tab-panel">
-    <pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/gemini/GEMINI.md</code></pre>
-    <p>Or configure Gemini CLI to read <code>AGENTS.md</code> via <code>.gemini/settings.json</code>.</p>
-  </div>
-  <div id="tab-codex" class="tab-panel">
-    <p>Codex reads <code>AGENTS.md</code> natively. No extra file needed — just the quickstart above.</p>
-  </div>
-  <div id="tab-claude" class="tab-panel">
-    <pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/CLAUDE.md
-curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
-    <p><code>CLAUDE.md</code> uses <code>@AGENTS.md</code> import for always-on output.</p>
-  </div>
-
-  <h3>One-command installer</h3>
-  <pre><code>curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash</code></pre>
-  <p>Detects all tools, merges safely (backs up existing files), idempotent.</p>
-</section>
-
-<!-- COMPARISON -->
-<section id="compare">
-  <h2>adhd-mode vs i-have-adhd</h2>
-  <table class="cmp-table">
-    <thead><tr><th>Feature</th><th>i-have-adhd</th><th>adhd-mode</th></tr></thead>
-    <tbody>
-      <tr><td>Activation</td><td class="partial">Invoke per session</td><td class="yes">Always on</td></tr>
-      <tr><td>Tools covered</td><td class="partial">Claude, Codex, Cursor</td><td class="yes">20+ (via AGENTS.md)</td></tr>
-      <tr><td>Rule decay fix</td><td class="no">No</td><td class="yes">Anti-decay re-injection</td></tr>
-      <tr><td>Time estimates</td><td class="no">Fabricated (inaccurate)</td><td class="yes">Scope by shape</td></tr>
-      <tr><td>Repo size</td><td class="no">8.7k lines, 59 files</td><td class="yes">140 lines, 1 file</td></tr>
-      <tr><td>Copilot IDE support</td><td class="no">No</td><td class="yes">Yes</td></tr>
-      <tr><td>Windsurf modern format</td><td class="no">No</td><td class="yes">Yes</td></tr>
-      <tr><td>Diagnosis-free option</td><td class="no">No</td><td class="yes">"Action-first mode"</td></tr>
-      <tr><td>Installer</td><td class="partial">Manual per tool</td><td class="yes">One command, safe merge</td></tr>
-      <tr><td>License</td><td class="yes">MIT</td><td class="yes">MIT</td></tr>
-    </tbody>
-  </table>
-  <p><strong>They complement each other.</strong> Use i-have-adhd for on-demand per-session control. Use adhd-mode for always-on, every tool. Same 10 rules, same author credited.</p>
-</section>
-
-<!-- FAQ -->
-<section id="faq">
-  <h2>Frequently asked questions</h2>
-  <details class="faq-item">
-    <summary>What is adhd-mode?</summary>
-    <p>adhd-mode is an open-source project that ships 10 output rules making AI coding assistants produce ADHD-friendly output. You place a single <code>AGENTS.md</code> file in your repository root, and every AI coding tool that reads it — Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Aider, Zed, and 20+ others — automatically shapes its output to be action-first, numbered, and free of preamble. The rules are adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT).</p>
-  </details>
-  <details class="faq-item">
-    <summary>How is adhd-mode different from i-have-adhd?</summary>
-    <p>i-have-adhd is a skill you invoke each session. adhd-mode is always on. It also fixes three problems users reported: rule decay (rules stop working after a few turns), fabricated time estimates, and bloat. adhd-mode covers Copilot, Windsurf, and Gemini that the original doesn't fully support.</p>
-  </details>
-  <details class="faq-item">
-    <summary>Does adhd-mode stop working after a few turns?</summary>
-    <p>No. adhd-mode includes an anti-decay mechanism: explicit re-injection instructions that tell the agent to re-apply all rules when the user says "adhd mode" again. This addresses the #1 complaint about the original.</p>
-  </details>
-  <details class="faq-item">
-    <summary>Do I need an ADHD diagnosis to use this?</summary>
-    <p>No. The rules help anyone who wants action-first, no-filler AI output. adhd-mode also works under the neutral name "action-first mode."</p>
-  </details>
-  <details class="faq-item">
-    <summary>Why doesn't adhd-mode use time estimates?</summary>
-    <p>The #3 complaint about the original was that the model fabricates inaccurate time estimates. adhd-mode replaces them with scope-by-shape: Quick (one file), Medium (2-3 files), Large (cross-cutting).</p>
-  </details>
-  <details class="faq-item">
-    <summary>Which tools are supported?</summary>
-    <p>Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, Factory, Jules, Devin, Amp, and 20+ others via AGENTS.md.</p>
-  </details>
-  <details class="faq-item">
-    <summary>Is adhd-mode free?</summary>
-    <p>Yes. MIT licensed, no paid features, no accounts, no telemetry.</p>
-  </details>
-  <details class="faq-item">
-    <summary>How do I turn it off?</summary>
-    <p>Say "stop adhd mode" or "normal mode" in any chat. The AI returns to its default output style.</p>
-  </details>
-</section>
-
-<!-- CTA -->
-<section style="text-align: center; padding: 60px 0;">
-  <h2>Ready to stop scrolling past "Great question!"?</h2>
-  <p style="color: var(--text-muted); margin-bottom: 32px;">One file. 30 seconds. Every AI tool you use.</p>
-  <div class="cta-group">
-    <a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
-    <a href="#install" class="btn btn-secondary">Install now</a>
-  </div>
-</section>
-
+<section id="problem" class="reveal">
+<h2>The problem</h2>
+<p class="sec-sub">Every AI coding assistant wastes your time with filler:</p>
+<div class="ba-grid">
+<div class="ba-card before"><div class="ba-label">⚠ Before (any tool)</div><blockquote>Great question! Let me take a look at your authentication flow. There are a few moving pieces here: the middleware, the token verification, and the cookie handling. Looking at <code>src/auth.ts</code>, the <code>verifyToken</code> function (around lines 42-58) seems to be using an older <code>jsonwebtoken</code> API. One approach would be to update the package and rewrite that function. After making the change, you'd want to run the auth tests to confirm nothing breaks. By the way, you might also want to look at your dependency versions overall. Hope this helps! Let me know if you want to dig deeper.</blockquote></div>
+<div class="ba-card after"><div class="ba-label">✓ After (adhd-mode)</div><blockquote>Run <code>npm install jsonwebtoken@latest</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open <code>src/auth.ts</code><br>2. Replace <code>verifyToken</code> (lines 42-58) with the snippet below<br>3. Run <code>npm test -- auth.spec.ts</code><br><br>Next: paste the first failing line if any test fails.</blockquote></div>
 </div>
+<p>You don't need shorter answers. You need answers shaped so an ADHD brain can <strong>act on them</strong> — lead with the next action, number the steps, end with one thing to do next.</p>
+</section>
 
-<footer>
-  <div class="container">
-    <p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> · Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
-    <p style="margin-top: 8px;">No accounts. No telemetry. No tracking. Just one file.</p>
-  </div>
-</footer>
+<section id="whats-new" class="reveal" style="background:var(--surface);border-radius:20px;padding:48px;margin:24px 0;">
+<h2 style="font-size:1.6rem;">What's new in v2.0 (beats the original)</h2>
+<p class="sec-sub">Based on analysis of 324 HN comments and Reddit threads about <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (42k+ stars), adhd-mode v2.0 fixes the three biggest complaints:</p>
+<div class="features">
+<div class="feature"><div class="icon">🔁</div><h4>Anti-decay</h4><p>The #1 complaint: rules stop working after a few turns. adhd-mode includes explicit re-injection instructions and ships as an always-on output style, not a one-shot skill prompt.</p></div>
+<div class="feature"><div class="icon">📐</div><h4>Scope by shape</h4><p>The #3 complaint: model time estimates are "hilariously inept." We replaced fabricated clock estimates with scope-by-shape: Quick, Medium, Large. Actionable sizing without false precision.</p></div>
+<div class="feature"><div class="icon">📄</div><h4>One file, zero bloat</h4><p>The #2 complaint: "8.7k lines across 59 files." adhd-mode is one <code>AGENTS.md</code> file. One curl. One paste. Zero dependencies. 140 lines of rules.</p></div>
+<div class="feature"><div class="icon">🧠</div><h4>Diagnosis-free</h4><p>Some users can't have "ADHD" in their AI context. adhd-mode also works under the neutral name "action-first mode." The rules help everyone who wants no-filler output.</p></div>
+<div class="feature"><div class="icon">🔒</div><h4>Pinned URLs</h4><p>Install commands always pin exact GitHub raw URLs. No paraphrased curl commands that could resolve to a squatted repo. Security-first install.</p></div>
+<div class="feature"><div class="icon">🌐</div><h4>20+ tools, one file</h4><p>AGENTS.md is a Linux Foundation standard. Codex, Cursor, Copilot, Windsurf, Gemini, Aider, Zed — all read it natively. No per-tool plugin installs.</p></div>
+</div>
+</section>
 
-<script>
-function showTab(e, name) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  e.target.classList.add('active');
-  document.getElementById('tab-' + name).classList.add('active');
-}
-</script>
+<section id="rules" class="reveal">
+<h2>The 10 rules</h2>
+<p class="sec-sub">Each rule addresses a specific ADHD cognitive challenge. Full text in every rule file on <a href="https://github.com/DevAnimecx/adhd-mode">GitHub</a>.</p>
+<table>
+<thead><tr><th>#</th><th>Rule</th><th>What it does</th><th>ADHD challenge addressed</th></tr></thead>
+<tbody>
+<tr><td style="color:var(--accent);font-weight:700">1</td><td>Lead with the next action</td><td>First line = something you can do now</td><td>Task initiation paralysis</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">2</td><td>Number multi-step tasks</td><td>Numbered list, one bounded action per step</td><td>Overwhelm from unbounded scope</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">3</td><td>End with one concrete next action</td><td>One thing under 2 min</td><td>Decision fatigue at end of response</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">4</td><td>Suppress tangents</td><td>Finish first, offer second separately</td><td>Attention switching cost</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">5</td><td>Restate state every turn</td><td>"Step 3 of 5 done. Next: X."</td><td>Working memory limits</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">6</td><td>Scope by shape, not time</td><td>Quick / Medium / Large — not "15 min"</td><td>Fabricated estimates cause distrust</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">7</td><td>Make wins visible</td><td>Show what works, concretely</td><td>Dopamine deficit — progress must be visible</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">8</td><td>Matter-of-fact errors</td><td>No "uh oh." Cause + fix.</td><td>Emotional dysregulation from errors</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">9</td><td>Cap lists at 5 items</td><td>Split into "now" vs "later"</td><td>Choice paralysis from long lists</td></tr>
+<tr><td style="color:var(--accent);font-weight:700">10</td><td>No preamble, no recap, no closers</td><td>Start with answer, end when done</td><td>Scrolling fatigue from filler</td></tr>
+</tbody>
+</table>
+<p>Plus a <strong>pre-send check</strong> (5 deletions before sending) and <strong>6 override conditions</strong> (when to break the rules). <a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">Full rules breakdown →</a></p>
+</section>
 
-</body>
-</html>
+<section id="install" class="reveal">
+<h2>Install in 30 seconds</h2>
+<p class="sec-sub">No accounts, no plugins, no marketplace. One file.</p>
+<div class="quickstart">
+<div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Quickstart — one file, 20+ tools</span></div>
+<pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
+<p style="color:var(--muted);margin-top:8px;">That's it. Codex, Cursor, Copilot, Windsurf, Gemini, Aider, Zed — all read it automatically. Restart your editor.</p>
+</div>
+<h3>Per-tool install</h3>
+<div class="tabs">
+<button class="tab active" onclick="showTab(event,'cursor')">Cursor</button>
+<button class="tab" onclick="showTab(event,'copilot')">Copilot</button>
+<button class="tab" onclick="showTab(event,'windsurf')">Windsurf</button>
+<button class="tab" onclick="showTab(event,'gemini')">Gemini</button>
+<button class="tab" onclick="showTab(event,'codex')">Codex</button>
+<button class="tab" onclick="showTab(event,'claude')">Claude Code</button>
+</div>
+<div id="tab-cursor" class="tab-panel active"><pre><code>mkdir -p .cursor/rules
+curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/cursor/adhd-mode.mdc</code></pre><p>Uses <code>alwaysApply: true</code> — injected into every Cursor Agent chat. <a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Full Cursor guide →</a></p></div>
+<div id="tab-copilot" class="tab-panel"><pre><code>mkdir -p .github
+curl -o .github/copilot-instructions.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/copilot/copilot-instructions.md</code></pre><p>Copilot cloud agent also reads <code>AGENTS.md</code> natively. <a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Full Copilot guide →</a></p></div>
+<div id="tab-windsurf" class="tab-panel"><pre><code>mkdir -p .windsurf/rules
+curl -o .windsurf/rules/adhd-mode.md https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/windsurf/rules/adhd-mode.md</code></pre><p>Uses <code>trigger: always_on</code> — included in every Cascade message. <a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Full Windsurf guide →</a></p></div>
+<div id="tab-gemini" class="tab-panel"><pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/gemini/GEMINI.md</code></pre><p>Or configure Gemini CLI to read <code>AGENTS.md</code> via <code>.gemini/settings.json</code>. <a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Full Gemini guide →</a></p></div>
+<div id="tab-codex" class="tab-panel"><p>Codex reads <code>AGENTS.md</code> natively. No extra file needed — just the quickstart above. <a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Full Codex guide →</a></p></div>
+<div id="tab-claude" class="tab-panel"><pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/CLAUDE.md
+curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre><p><code>CLAUDE.md</code> uses <code>@AGENTS.md</code> import for always-on output. <a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Full Claude Code guide →</a></p></div>
+<h3>One-command installer</h3>
+<pre><code>curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash</code></pre>
+<p>Detects all tools, merges safely (backs up existing files), idempotent. <a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Full install guide →</a></p>
+</section>
+
+<section id="compare" class="reveal">
+<h2>adhd-mode vs i-have-adhd</h2>
+<p class="sec-sub">They complement each other. See the <a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">full comparison →</a></p>
+<table>
+<thead><tr><th>Feature</th><th>i-have-adhd</th><th>adhd-mode</th></tr></thead>
+<tbody>
+<tr><td>Activation</td><td class="partial">Invoke per session</td><td class="yes">Always on</td></tr>
+<tr><td>Tools covered</td><td class="partial">Claude, Codex, Cursor</td><td class="yes">20+ (via AGENTS.md)</td></tr>
+<tr><td>Rule decay fix</td><td class="no">No</td><td class="yes">Anti-decay re-injection</td></tr>
+<tr><td>Time estimates</td><td class="no">Fabricated (inaccurate)</td><td class="yes">Scope by shape</td></tr>
+<tr><td>Repo size</td><td class="no">8.7k lines, 59 files</td><td class="yes">140 lines, 1 file</td></tr>
+<tr><td>Copilot IDE support</td><td class="no">No</td><td class="yes">Yes</td></tr>
+<tr><td>Windsurf modern format</td><td class="no">No</td><td class="yes">Yes</td></tr>
+<tr><td>Diagnosis-free option</td><td class="no">No</td><td class="yes">"Action-first mode"</td></tr>
+<tr><td>Installer</td><td class="partial">Manual per tool</td><td class="yes">One command, safe merge</td></tr>
+<tr><td>License</td><td class="yes">MIT</td><td class="yes">MIT</td></tr>
+</tbody>
+</table>
+<p><strong>They complement each other.</strong> Use i-have-adhd for on-demand per-session control. Use adhd-mode for always-on, every tool. Same 10 rules, same author credited.</p>
+</section>
+
+<section id="faq" class="reveal">
+<h2>Frequently asked questions</h2>
