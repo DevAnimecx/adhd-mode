@@ -229,3 +229,51 @@ curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx
 
 <section class="reveal">
 <h2>Frequently asked questions about Cursor + adhd-mode</h2>
+<details class="faq-item"><summary>How do I set up ADHD rules in Cursor?</summary><p>Place a .mdc file in .cursor/rules/ with alwaysApply: true. Run: mkdir -p .cursor/rules && curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/rules/cursor/adhd-mode.mdc</p></details>
+<details class="faq-item"><summary>Do ADHD Cursor rules work in Agent mode?</summary><p>Yes. With alwaysApply: true, the rules are injected into every Cursor Agent chat, regardless of context. This is the strongest always-on guarantee of any tool.</p></details>
+<details class="faq-item"><summary>Can I use AGENTS.md instead of .mdc in Cursor?</summary><p>Yes. Cursor reads AGENTS.md natively. You can use either or both. The .mdc file gives you the alwaysApply: true guarantee.</p></details>
+<details class="faq-item"><summary>Do Cursor rules stop working after a few turns?</summary><p>adhd-mode includes an anti-decay mechanism. If rules start fading, say 'adhd mode' again and the AI re-applies all rules from scratch.</p></details>
+</section>
+
+
+<div class="cta-section reveal">
+<h2>Ready to fix Cursor's output?</h2>
+<p style="color:var(--muted);margin-bottom:32px;">One file. 30 seconds. Cursor starts respecting your working memory.</p>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">Install for Cursor</a>
+</div>
+</div>
+
+</div>
+
+<div class="page-nav">
+<a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
+</div>
+
+<footer><div class="container">
+<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> · Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
+<p style="margin-top:8px;">No accounts · No telemetry · No tracking · Just one file</p>
+</div></footer>
+
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+function showTab(e,name){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+function animateCount(el){const target=parseInt(el.dataset.count);let current=0;const step=target/40;const timer=setInterval(()=>{current+=step;if(current>=target){el.textContent=target;clearInterval(timer);}else{el.textContent=Math.floor(current);}},20);}
+const countObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target);}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(e=>countObs.observe(e));
+</script>
+
+</body>
+</html>
