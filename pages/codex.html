@@ -20,11 +20,11 @@
 <meta name="twitter:description" content="ADHD-friendly output rules for OpenAI Codex. Make Codex lead with action, number steps, and stop adding tangents. One AGENTS.md file at project root.">
 <meta name="twitter:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants. One AGENTS.md file works in 20+ tools.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.0.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in Codex?", "acceptedAnswer": {"@type": "Answer", "text": "Codex reads AGENTS.md natively. Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md — no extra file needed."}}, {"@type": "Question", "name": "Does Codex support global ADHD rules?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Place AGENTS.md at ~/.codex/AGENTS.md for global rules that apply to all projects."}}, {"@type": "Question", "name": "What is the AGENTS.md size limit in Codex?", "acceptedAnswer": {"@type": "Answer", "text": "Codex has a 32 KiB total cap for combined AGENTS.md files. adhd-mode is ~2.7KB — well within the limit."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in Codex?", "acceptedAnswer": {"@type": "Answer", "text": "Codex reads AGENTS.md natively. Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md \u2014 no extra file needed."}}, {"@type": "Question", "name": "Does Codex support global ADHD rules?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Place AGENTS.md at ~/.codex/AGENTS.md for global rules that apply to all projects."}}, {"@type": "Question", "name": "What is the AGENTS.md size limit in Codex?", "acceptedAnswer": {"@type": "Answer", "text": "Codex has a 32 KiB total cap for combined AGENTS.md files. adhd-mode is ~2.7KB \u2014 well within the limit."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"adhd-mode","item":"https://devanimecx.github.io/adhd-mode/"},{"@type":"ListItem","position":2,"name":"Codex","item":"https://devanimecx.github.io/adhd-mode/pages/codex.html"}]}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0e14;--bg2:#0d1117;--surface:rgba(22,27,34,0.6);--surface-solid:#161b22;--border:rgba(48,54,61,0.6);--border-bright:rgba(88,166,255,0.3);--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#f778ba;--radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'SF Mono','Fira Code',monospace;--maxw:920px;--glow:0 0 40px rgba(88,166,255,0.15)}
+:root{--bg:#0a0e14;--bg2:#0d1117;--surface:rgba(22,27,34,0.6);--surface-solid:#161b22;--border:rgba(48,54,61,0.6);--border-bright:rgba(88,166,255,0.3);--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;-pink:#f778ba;--radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'SF Mono','Fira Code',monospace;--maxw:920px;--glow:0 0 40px rgba(88,166,255,0.15)}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 /* Gradient orbs background */
@@ -39,7 +39,7 @@ code{font-family:var(--mono);font-size:.88em;background:rgba(88,166,255,0.1);pad
 pre{background:var(--surface-solid);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:20px 0;position:relative}
 pre code{background:none;padding:0;color:var(--text);font-size:.85em;line-height:1.6}
 /* Nav */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,14,20,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav{position:sticky:top:0;z-index:100;background:rgba(10,14,20,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
 nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
 nav .logo{font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:8px}
 nav .logo span{background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -121,7 +121,7 @@ th{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;l
 .qs-title{font-size:.82rem;color:var(--muted);margin-left:8px;font-family:var(--mono)}
 /* FAQ */
 .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
-.faq-item summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.faq-item summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-etween;align-items:center;transition:color .2s}
 .faq-item summary:hover{color:var(--accent)}
 .faq-item summary::after{content:'+';font-size:1.4rem;color:var(--muted);transition:transform .2s}
 .faq-item[open] summary::after{transform:rotate(45deg)}
@@ -154,7 +154,7 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 <a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
-<a href="https://github.com/DevAnimecx/adhd-mode" class="star-btn">★ Star</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="star-btn">☏ Star</a>
 </div>
 </div></nav>
 <div class="container">
@@ -163,7 +163,7 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 <h1 style="font-size:2.4rem;">ADHD-friendly output rules for <span class="grad">Codex</span></h1>
 <p class="sub">ADHD-friendly output rules for OpenAI Codex. Make Codex lead with action, number steps, and stop adding tangents. One AGENTS.md file at project root. One file. Always on. No slash command. No plugin marketplace.</p>
 <div class="cta-group">
-<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">☏ Star on GitHub</a>
 <a href="#install" class="btn btn-secondary">Install for Codex →</a>
 </div>
 </div>
@@ -174,11 +174,10 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 <div class="features">
 <div class="feature"><div class="icon">⚡</div><h4>Action-first</h4><p>First line = something you can do now. Not context. Not a plan. The action.</p></div>
 <div class="feature"><div class="icon">🔢</div><h4>Numbered steps</h4><p>Multi-step tasks become numbered lists with one bounded action per step.</p></div>
-<div class="feature"><div class="icon">🔁</div><h4>Anti-decay</h4><p>Rules persist across turns with explicit re-injection. No fading after 5 turns.</p></div>
+<div class="feature"><div class="icon">🔏</div><h4>Anti-decay</h4><p>Rules persist across turns with explicit re-injection. No fading after 5 turns.</p></div>
 <div class="feature"><div class="icon">📐</div><h4>Scope by shape</h4><p>Quick / Medium / Large instead of fabricated time estimates.</p></div>
 </div>
 </section>
-
 <section id="install" class="reveal">
 <h2>Install for Codex</h2>
 <p class="sec-sub">Codex reads AGENTS.md from the project root and walks down from root to the current directory. It also reads ~/.codex/AGENTS.md for global instructions. Files are concatenated root-down with a 32 KiB total cap. AGENTS.override.md takes precedence over AGENTS.md.</p>
@@ -190,7 +189,6 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 <pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
 <p style="color:var(--muted);margin-top:8px;">The file is at <code>AGENTS.md</code>. Restart Codex after installing.</p>
 </section>
-
 <section class="reveal">
 <h2>Before / After in Codex</h2>
 <div class="ba-grid">
@@ -198,7 +196,6 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 <div class="ba-card after"><div class="ba-label">✓ After (adhd-mode)</div><blockquote>Run <code>npm install jsonwebtoken@latest</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open <code>src/auth.ts</code><br>2. Replace <code>verifyToken</code> (lines 42-58)<br>3. Run <code>npm test -- auth.spec.ts</code><br><br>Next: paste the first failing line.</blockquote></div>
 </div>
 </section>
-
 <section class="reveal">
 <h2>The 10 rules applied in Codex</h2>
 <table>
@@ -218,13 +215,52 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 </table>
 <p><a href="https://github.com/DevAnimecx/adhd-mode/blob/main/AGENTS.md">View the Codex rule file on GitHub →</a></p>
 </section>
-
 <section class="reveal">
 <h2>How Codex loads the rules</h2>
 <p class="sec-sub">Technical details on how Codex discovers and applies the output rules.</p>
 <p>Codex reads AGENTS.md from the project root and walks down from root to the current directory. It also reads ~/.codex/AGENTS.md for global instructions. Files are concatenated root-down with a 32 KiB total cap. AGENTS.override.md takes precedence over AGENTS.md.</p>
 <p>The file uses Codex's native rule-loading mechanism. Once placed at the correct path, Codex reads it on startup and applies the rules to every AI interaction — chat, inline completions, and code generation. The rules stay on until you say "stop adhd mode" in chat.</p>
 </section>
-
 <section class="reveal">
 <h2>Frequently asked questions about Codex + adhd-mode</h2>
+<details class="faq-item"><summary>How do I set up ADHD rules in Codex?</summary><p>Codex reads AGENTS.md natively. Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</p></details>
+<details class="faq-item"><summary>Does Codex support global ADHD rules?</summary><p>Yes. Place AGENTS.md at ~/.codex/AGENTS.md for global rules.</p></details>
+<details class="faq-item"><summary>What is the AGENTS.md size limit in Codex?</summary><p>Codex has a 32 KiB total cap. adhd-mode is ~2.7KB — well within the limit.</p></details>
+</section>
+
+<div class="cta-section reveal">
+<h2>Ready to fix Codex's output?</h2>
+<p style="color:var(--muted);margin-bottom:32px;">One file. 30 seconds. Codex starts respecting your working memory.</p>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">☏ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">Install for Codex</a>
+</div>
+</div>
+</div>
+<div class="page-nav">
+<a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
+</div>
+<footer><div class="container">
+<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> ·<a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> ·Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
+<p style="margin-top:8px;">No accounts · No telemetry · No tracking · Just one file</p>
+</div></footer>
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+function showTab(e,name){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+function animateCount(el){const target=parseInt(el.dataset.count);let current=0;const step=target/40;const timer=setInterval(()=>{current+=step;if(current>=target){el.textContent=target;clearInterval(timer);}else{el.textContent=Math.floor(current);}},20);}
+const countObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target);}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(e=>countObs.observe(e));
+</script>
+</body>
+</html>
