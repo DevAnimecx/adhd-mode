@@ -118,7 +118,7 @@ th{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;l
 .quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:14px}
 .dots{display:flex;gap:6px}
 .dot{width:12px;height:12px;border-radius:50%}
-.dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
+.dot.r{background:var(--red)}.dot.{{background:var(--yellow)}.dot.g{background:var(--green)}
 .qs-title{font-size:.82rem;color:var(--muted);margin-left:8px;font-family:var(--mono)}
 /* FAQ */
 .faq-item{border-bottom:1px solid var(--border);padding:18px 0}
@@ -267,7 +267,7 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <tr><td>Activation</td><td class="partial">Invoke per session</td><td class="yes">Always on</td></tr>
 <tr><td>Tools covered</td><td class="partial">Claude, Codex, Cursor</td><td class="yes">20+ (via AGENTS.md)</td></tr>
 <tr><td>Rule decay fix</td><td class="no">No</td><td class="yes">Anti-decay re-injection</td></tr>
-<tr><td>Time estimates</td><td class="no">Fabricated (inaccurate)</td><td class="yes">Scope by shape</td></tr>
+<tr><td>Time estimates</td><td class="no">Fabricated (inaccurate),/td><td class="yes">Scope by shape</td></tr>
 <tr><td>Repo size</td><td class="no">8.7k lines, 59 files</td><td class="yes">140 lines, 1 file</td></tr>
 <tr><td>Copilot IDE support</td><td class="no">No</td><td class="yes">Yes</td></tr>
 <tr><td>Windsurf modern format</td><td class="no">No</td><td class="yes">Yes</td></tr>
@@ -281,3 +281,55 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 
 <section id="faq" class="reveal">
 <h2>Frequently asked questions</h2>
+<details class="faq-item"><summary>What is adhd-mode?</summary><p>adhd-mode is an open-source project that ships 10 output rules making AI coding assistants produce ADHD-friendly output. You place a single AGENTS.md file in your repository root, and every AI coding tool that reads it — Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Aider, Zed, and 20+ others — automatically shapes its output to be action-first, numbered, and free of preamble. The rules are adapted from i-have-adhd (MIT).</p></details>
+<details class="faq-item"><summary>How is adhd-mode different from i-have-adhd?</summary><p>i-have-adhd is a skill you invoke each session. adhd-mode is always on — you paste one file and every response is ADHD-shaped from the first message. It also fixes rule decay, fabricated time estimates, and bloat. adhd-mode covers Copilot, Windsurf, and Gemini that the original doesn't fully support.</p></details>
+<details class="faq-item"><summary>How do I install adhd-mode?</summary><p>Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md — then restart your editor. Or use the installer: curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash</p></details>
+<details class="faq-item"><summary>Which tools does adhd-mode support?</summary><p>Codex, Cursor, GitHub Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, Factory, Jules, Devin, Amp, RooCode, and 20+ others via AGENTS.md.</p></details>
+<details class="faq-item"><summary>Does adhd-mode stop working after a few turns?</summary><p>No. adhd-mode includes an anti-decay mechanism: explicit re-injection instructions. Say 'adhd mode' again and the AI re-applies all rules from scratch.</p></details>
+<details class="faq-item"><summary>Do I need an ADHD diagnosis?</summary><p>No. The rules help anyone who wants action-first, no-filler AI output. Also works as 'action-first mode.'</p></details>
+<details class="faq-item"><summary>Why doesn't adhd-mode use time estimates?</summary><p>The #3 complaint about the original was fabricated estimates. adhd-mode uses scope-by-shape: Quick, Medium, Large.</p></details>
+<details class="faq-item"><summary>Is adhd-mode free?</summary><p>Yes. MIT licensed. No paid features, accounts, or telemetry.</p></details>
+</section>
+
+
+<div class="cta-section reveal">
+<h2>Ready to stop scrolling past "Great question!"?</h2>
+<p style="color:var(--muted);margin-bottom:32px;">One file. 30 seconds. Every AI tool you use.</p>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">Install now</a>
+</div>
+</div>
+
+</div>
+
+<div class="page-nav">
+<a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
+</div>
+
+<footer><div class="container">
+<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> · Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
+<p style="margin-top:8px;">No accounts · No telemetry · No tracking · Just one file</p>
+</div></footer>
+
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+function showTab(e,name){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+function animateCount(el){const target=parseInt(el.dataset.count);let current=0;const step=target/40;const timer=setInterval(()=>{current+=step;if(current>=target){el.textContent=target;clearInterval(timer);}else{el.textContent=Math.floor(current);}},20);}
+const countObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target);}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(e=>countObs.observe(e));
+</script>
+
+</body>
+</html>
