@@ -163,3 +163,61 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 </div>
 
 <section class="reveal">
+<details class="faq-item"><summary>What is adhd-mode?</summary><p>adhd-mode is an open-source project that ships 10 output rules making AI coding assistants produce ADHD-friendly output.</p></details>
+<details class="faq-item"><summary>How does adhd-mode work?</summary><p>Place AGENTS.md at your repo root. 20+ tools read it automatically.</p></details>
+<details class="faq-item"><summary>How is adhd-mode different from i-have-adhd?</summary><p>Always on vs invoke per session. Fixes rule decay, fabricated estimates, bloat. Covers Copilot, Windsurf, Gemini.</p></details>
+<details class="faq-item"><summary>How do I install adhd-mode?</summary><p>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</p></details>
+<details class="faq-item"><summary>Which tools are supported?</summary><p>Codex, Cursor, Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, and 20+ others.</p></details>
+<details class="faq-item"><summary>Does adhd-mode stop working after a few turns?</summary><p>No. Anti-decay mechanism with re-injection.</p></details>
+<details class="faq-item"><summary>Do I need an ADHD diagnosis?</summary><p>No. Works as 'action-first mode' for anyone.</p></details>
+<details class="faq-item"><summary>Why no time estimates?</summary><p>The #3 complaint about the original. Replaced with scope-by-shape: Quick/Medium/Large.</p></details>
+<details class="faq-item"><summary>Is adhd-mode free?</summary><p>Yes. MIT licensed.</p></details>
+<details class="faq-item"><summary>How do I turn it off?</summary><p>Say 'stop adhd mode' or 'normal mode'. Or delete the file.</p></details>
+<details class="faq-item"><summary>Can I customize?</summary><p>Yes. Fork, edit scripts/build.py, regenerate.</p></details>
+<details class="faq-item"><summary>Does it waste tokens?</summary><p>No. Rules are ~2KB. Output is shorter, so fewer tokens used.</p></details>
+<details class="faq-item"><summary>What is AGENTS.md?</summary><p>A Linux Foundation open standard for AI agent context. Read natively by 20+ tools.</p></details>
+<details class="faq-item"><summary>Can I use both adhd-mode and i-have-adhd?</summary><p>Yes. They complement each other. On-demand + always-on.</p></details>
+</section>
+
+
+<div class="cta-section reveal">
+<h2>Still have questions?</h2>
+<p style="color:var(--muted);margin-bottom:32px;">Open an issue on GitHub or check the docs.</p>
+<div class="cta-group">
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="#install" class="btn btn-secondary">View docs</a>
+</div>
+</div>
+
+</div>
+
+<div class="page-nav">
+<a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
+<a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
+</div>
+
+<footer><div class="container">
+<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> · Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
+<p style="margin-top:8px;">No accounts · No telemetry · No tracking · Just one file</p>
+</div></footer>
+
+<script>
+const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
+function showTab(e,name){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+function animateCount(el){const target=parseInt(el.dataset.count);let current=0;const step=target/40;const timer=setInterval(()=>{current+=step;if(current>=target){el.textContent=target;clearInterval(timer);}else{el.textContent=Math.floor(current);}},20);}
+const countObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target);}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(e=>countObs.observe(e));
+</script>
+
+</body>
+</html>
