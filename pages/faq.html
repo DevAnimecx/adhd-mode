@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="FAQ — adhd-mode">
 <meta name="twitter:description" content="Answers to common questions about adhd-mode.">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "adhd-mode ships 10 output rules making AI coding assistants produce ADHD-friendly output. One AGENTS.md file works in 20+ tools including Cursor, Copilot, Windsurf, Gemini CLI, Codex, and Claude Code. Rules adapted from i-have-adhd (MIT)."}}, {"@type": "Question", "name": "How is adhd-mode different from i-have-adhd?", "acceptedAnswer": {"@type": "Answer", "text": "i-have-adhd is invoked per session. adhd-mode is always on. It also fixes rule decay, fabricated time estimates, and bloat. Covers Copilot, Windsurf, and Gemini that the original doesn't."}}, {"@type": "Question", "name": "How do I install adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md then restart your editor."}}, {"@type": "Question", "name": "Which tools are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Codex, Cursor, Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, and 20+ others via AGENTS.md."}}, {"@type": "Question", "name": "Does adhd-mode stop working after a few turns?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anti-decay mechanism with re-injection. Say 'adhd mode' again to re-apply."}}, {"@type": "Question", "name": "Do I need an ADHD diagnosis?", "acceptedAnswer": {"@type": "Answer", "text": "No. Works as 'action-first mode' for anyone."}}, {"@type": "Question", "name": "Why no time estimates?", "acceptedAnswer": {"@type": "Answer", "text": "Replaced with scope-by-shape: Quick, Medium, Large."}}, {"@type": "Question", "name": "Is adhd-mode free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. MIT licensed. No paid features."}}, {"@type": "Question", "name": "How do I turn it off?", "acceptedAnswer": {"@type": "Answer", "text": "Say 'stop adhd mode'."}}, {"@type": "Question", "name": "Can I customize?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Fork, edit build.py, regenerate."}}, {"@type": "Question", "name": "Does it waste tokens?", "acceptedAnswer": {"@type": "Answer", "text": "No. ~2KB. Output is shorter."}}]}</script>
 <style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
@@ -135,7 +135,7 @@ nav .star-btn:hover{background:rgba(88,166,255,0.15);transform:translateY(-1px)}
 
 /* ===== Neon Gradient Card (Magic UI: Neon Gradient Card) ===== */
 .neon-card{position:relative;background:var(--surface);border-radius:14px;padding:24px;backdrop-filter:blur(10px);overflow:hidden;transition:transform .3s}
-.neon-card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,rgba(88,166,255,0.4),rgba(188,140,255,0.2),rgba(63,185,80,0.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+.neon-card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,var(88,166,255,0.4),var(188,140,255,0.2),var(63,185,80,0.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
 .neon-card:hover::before{opacity:1}
 .neon-card:hover{transform:translateY(-3px)}
 .neon-card .icon{font-size:1.5rem;margin-bottom:8px}
@@ -144,7 +144,7 @@ nav .star-btn:hover{background:rgba(88,166,255,0.15);transform:translateY(-1px)}
 
 /* ===== Magic Card spotlight (Magic UI: Magic Card) ===== */
 .magic-card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;backdrop-filter:blur(10px);overflow:hidden;transition:all .3s}
-.magic-card::before{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(88,166,255,0.1),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%)}
+.magic-card::before{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,var(88,166,255,0.1),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%)}
 .magic-card:hover::before{opacity:1}
 .magic-card:hover{border-color:var(--border-bright);transform:translateY(-2px)}
 
@@ -190,7 +190,7 @@ th{font-weight:700;color:var(--muted);font-size:.78rem;text-transform:uppercase;
 .quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .dots{display:flex;gap:5px}
 .dot{width:11px;height:11px;border-radius:50%}
-.dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
+.dot.r{background:var(--red)}.dot.{{background:var(--yellow)}.dot.g{background:var(--green)}
 .qs-title{font-size:.78rem;color:var(--muted);margin-left:6px;font-family:var(--mono)}
 
 /* ===== Code blocks ===== */
@@ -227,9 +227,6 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== AOS overrides ===== */
-[data-aos]{pointer-events:auto}
-
 /* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
 .dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
@@ -246,6 +243,17 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ===== Safe page-load animations (zero external deps, content always visible) ===== */
+@keyframes slideUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+.hero{animation:slideUp .7s ease}
+section{animation:slideUp .5s ease}
+.stats{animation:slideUp .5s ease .1s}
+.neon-card,.magic-card{animation:slideUp .4s ease}
+.ba-card{animation:slideUp .4s ease}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </style>
 </head><body>
 <div class="grid-bg"></div>
@@ -263,43 +271,11 @@ a:hover{color:var(--accent2)}
 </div>
 </div></nav>
 <div class="container">
-<div class="hero" data-aos="fade-up" style="padding:60px 0 40px;">
+<div class="hero" style="padding:60px 0 40px;">
 <h1 style="font-size:2.2rem;"><span class="aurora-text">FAQ</span></h1>
 <p class="sub">Answers to common questions about adhd-mode.</p>
 </div>
-<section data-aos="fade-up"><h2>FAQ</h2><details class="faq-item"><summary>What is adhd-mode?</summary><p>adhd-mode ships 10 output rules making AI coding assistants produce ADHD-friendly output. One AGENTS.md file works in 20+ tools including Cursor, Copilot, Windsurf, Gemini CLI, Codex, and Claude Code. Rules adapted from i-have-adhd (MIT).</p></details>
-<details class="faq-item"><summary>How is adhd-mode different from i-have-adhd?</summary><p>i-have-adhd is invoked per session. adhd-mode is always on. It also fixes rule decay, fabricated time estimates, and bloat. Covers Copilot, Windsurf, and Gemini that the original doesn't.</p></details>
-<details class="faq-item"><summary>How do I install adhd-mode?</summary><p>Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md then restart your editor.</p></details>
-<details class="faq-item"><summary>Which tools are supported?</summary><p>Codex, Cursor, Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, and 20+ others via AGENTS.md.</p></details>
-<details class="faq-item"><summary>Does adhd-mode stop working after a few turns?</summary><p>No. Anti-decay mechanism with re-injection. Say 'adhd mode' again to re-apply.</p></details>
-<details class="faq-item"><summary>Do I need an ADHD diagnosis?</summary><p>No. Works as 'action-first mode' for anyone.</p></details>
-<details class="faq-item"><summary>Why no time estimates?</summary><p>Replaced with scope-by-shape: Quick, Medium, Large.</p></details>
-<details class="faq-item"><summary>Is adhd-mode free?</summary><p>Yes. MIT licensed. No paid features.</p></details>
-<details class="faq-item"><summary>How do I turn it off?</summary><p>Say 'stop adhd mode'.</p></details>
-<details class="faq-item"><summary>Can I customize?</summary><p>Yes. Fork, edit build.py, regenerate.</p></details>
-<details class="faq-item"><summary>Does it waste tokens?</summary><p>No. ~2KB. Output is shorter.</p></details>
-</section>
-<div class="page-nav">
-<a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
-<a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
-</div>
-</div>
-<footer><div class="container">
-<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT</a> · Rules from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
-<p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
-</div></footer>
-<script>
-AOS.init({duration:600,once:true,offset:80});
-// Scroll progress
+<section><h2>FAQ</h2><details class="faq-item"><summary>What is adhd-mode?</summary><p>adhd-mode ships 10 output rules making AI coding assistants produce ADHD-friendly output. One AGENTS.md file works in 20+ tools including Cursor, Copilot, Windsurf, Gemini Codex, Claude Code, Aider, Zed, and 20+ others via AGENTS.md. Rules adapted from i-have-adhd (MIT).</p></details><details class="faq-item"><summary>How is adhd-mode different from i-have-adhd?</summary><p>i-have-adhd is invoked per session. adhd-mode is always on. It also fixes rule decay, fabricated time estimates, and bloat. Covers Copilot, Windsurf, and Gemini that the original doesn't.</p></details><details class="faq-item"><summary>How do I install adhd-mode?</summary><p>Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md then restart your editor.</p></details><details class="faq-item"><summary>Which tools are supported?</summary><p>Codex, Cursor, Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, and 20+ others via AGENTS.md.</p></details><details class="faq-item"><summary>Does adhd-mode stop working after a few turns?</summary><p>No. Anti-decay mechanism with re-injection. Say 'adhd mode' again to re-apply.</p></details><details class="faq-item"><summary>Do I need an ADHD diagnosis?</summary><p>No. Works as 'action-first mode' for anyone.</p></details><details class="faq-item"><summary>Why no time estimates?</summary><p>Replaced with scope-by-shape: Quick, Medium, Large.</p></details><details class="faq-item"><summary>Is adhd-mode free?</summary><p>Yes. MIT licensed. No paid features.</p></details><details class="faq-item"><summary>How do I turn it off?</summary><p>Say 'stop adhd mode'.</p></details><details class="faq-item"><summary>Can I customize?</summary><p>Yes. Fork, edit build.py, regenerate.</p></details><details class="faq-item"><summary>Does it waste tokens?</summary><p>No. ~2KB. Output is shorter.</p></details></section><div class="page-nav"><a href="https://devanimecx.github.io/adhd-mode/">← Home</a><a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a><a href="https://devanimecx.github.io/adhd-mode/pages/copilot.html">Copilot</a><a href="https://devanimecx.github.io/adhd-mode/pages/windsurf.html">Windsurf</a><a href="https://devanimecx.github.io/adhd-mode/pages/gemini.html">Gemini</a><a href="https://devanimecx.github.io/adhd-mode/pages/codex.html">Codex</a><a href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">Claude</a><a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">vs i-have-adhd</a><a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a><a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a><a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a></div></div><footer><div class="container"><p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT</a> · Rules from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p><p style="margin-top:6px;">No accounts · No telemetry · Just one file</p></div></footer><script>// Scroll progress
 window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
 // Tabs
 function showTab(e,name){document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
