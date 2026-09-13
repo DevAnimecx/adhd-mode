@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The 10 ADHD Output Rules — adhd-mode">
 <meta name="twitter:description" content="Each rule addresses a specific ADHD cognitive challenge.">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the 10 rules?", "acceptedAnswer": {"@type": "Answer", "text": "1. Lead with action 2. Number steps 3. End with next 4. Suppress tangents 5. Restate state 6. Scope by shape 7. Make wins visible 8. Matter-of-fact errors 9. Cap at 5 10. No preamble"}}, {"@type": "Question", "name": "Pre-send check?", "acceptedAnswer": {"@type": "Answer", "text": "Delete: self-announcing openers, closers, sidebars, hedges, idioms."}}, {"@type": "Question", "name": "When to break?", "acceptedAnswer": {"@type": "Answer", "text": "Explain requests, destructive actions, debug spirals, ambiguity."}}]}</script>
 <style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
@@ -46,7 +46,7 @@ body::after{content:'';position:fixed;bottom:-15%;right:-10%;width:50%;height:50
 .grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
   background-image:
     linear-gradient(rgba(88,166,255,0.04) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(88,166,255,0.04) 1px,transparent 1px);
+    linear-gradient(90deg,var(88,166,255,0.04) 1px,transparent 1px);
   background-size:50px 50px;
   mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 40%,transparent 100%);
   -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 40%,transparent 100%);
@@ -190,7 +190,7 @@ th{font-weight:700;color:var(--muted);font-size:.78rem;text-transform:uppercase;
 .quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
 .dots{display:flex;gap:5px}
 .dot{width:11px;height:11px;border-radius:50%}
-.dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
+.dot.r{background:var(--red)}.dot.{{background:var(--yellow)}.dot.g{background:var(--green)}
 .qs-title{font-size:.78rem;color:var(--muted);margin-left:6px;font-family:var(--mono)}
 
 /* ===== Code blocks ===== */
@@ -227,9 +227,6 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== AOS overrides ===== */
-[data-aos]{pointer-events:auto}
-
 /* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
 .dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
@@ -246,6 +243,17 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ===== Safe page-load animations (zero external deps, content always visible) ===== */
+@keyframes slideUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+.hero{animation:slideUp .7s ease}
+section{animation:slideUp .5s ease}
+.stats{animation:slideUp .5s ease .1s}
+.neon-card,.magic-card{animation:slideUp .4s ease}
+.ba-card{animation:slideUp .4s ease}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </style>
 </head><body>
 <div class="grid-bg"></div>
@@ -263,11 +271,11 @@ a:hover{color:var(--accent2)}
 </div>
 </div></nav>
 <div class="container">
-<div class="hero" data-aos="fade-up" style="padding:60px 0 40px;">
+<div class="hero" style="padding:60px 0 40px;">
 <h1 style="font-size:2.2rem;"><span class="aurora-text">The 10 ADHD Output Rules</span></h1>
 <p class="sub">Each rule addresses a specific ADHD cognitive challenge.</p>
 </div>
-<section data-aos="fade-up"><h2>The 10 rules</h2><table><thead><tr><th>#</th><th>Rule</th><th>ADHD challenge</th></tr></thead><tbody><tr><td>1</td><td>Lead with action</td><td>Task initiation</td></tr><tr><td>2</td><td>Number steps</td><td>Overwhelm</td></tr><tr><td>3</td><td>End with next action</td><td>Decision fatigue</td></tr><tr><td>4</td><td>Suppress tangents</td><td>Attention switching</td></tr><tr><td>5</td><td>Restate state</td><td>Working memory</td></tr><tr><td>6</td><td>Scope by shape</td><td>Fabricated estimates</td></tr><tr><td>7</td><td>Make wins visible</td><td>Dopamine deficit</td></tr><tr><td>8</td><td>Matter-of-fact errors</td><td>Emotional dysregulation</td></tr><tr><td>9</td><td>Cap lists at 5</td><td>Choice paralysis</td></tr><tr><td>10</td><td>No preamble/closers</td><td>Scrolling fatigue</td></tr></tbody></table></section>
+<section><h2>The 10 rules</h2><table><thead><tr><th>#</th><th>Rule</th><th>ADHD challenge</th></tr></thead><tbody><tr><td>1</td><td>Lead with action</td><td>Task initiation</td></tr><tr><td>2</td><td>Number steps</td><td>Overwhelm</td></tr><tr><td>3</td><td>End with next action</td><td>Decision fatigue</td></tr><tr><td>4</td><td>Suppress tangents</td><td>Attention switching</td></tr><tr><td>5</td><td>Restate state</td><td>Working memory</td></tr><tr><td>6</td><td>Scope by shape</td><td>Fabricated estimates</td></tr><tr><td>7</td><td>Make wins visible</td><td>Dopamine deficit</td></tr><tr><td>8</td><td>Matter-of-fact errors</td><td>Emotional dysregulation</td></tr><tr><td>9</td><td>Cap lists at 5</td><td>Choice paralysis</td></tr><tr><td>10</td><td>No preamble/closers</td><td>Scrolling fatigue</td></tr></tbody></table></section>
 <div class="page-nav">
 <a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
@@ -287,7 +295,6 @@ a:hover{color:var(--accent2)}
 <p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
 </div></footer>
 <script>
-AOS.init({duration:600,once:true,offset:80});
 // Scroll progress
 window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
 // Tabs
