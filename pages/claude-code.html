@@ -3,148 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>ADHD Claude Code rules — adhd-mode | Claude Code ADHD-Friendly Output Rules</title>
-<meta name="description" content="ADHD-friendly output rules for Claude Code. Make Claude lead with action, number steps, and stop saying 'Great question!' CLAUDE.md with @AGENTS.md import for always-on output.">
-<meta name="keywords" content="ADHD Claude Code rules, Claude Code adhd rules, Claude Code action-first output, Claude Code ai coding assistant, adhd-mode Claude Code, make Claude Code adhd friendly">
+<title>ADHD Claude Code rules — adhd-mode | Claude Code ADHD Rules</title>
+<meta name="description" content="ADHD-friendly output rules for Claude Code.">
+<meta name="keywords" content="ADHD Claude Code rules, Claude Code adhd, make Claude Code adhd friendly, adhd-mode Claude Code">
 <meta name="author" content="adhd-mode contributors">
-<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
 <link rel="canonical" href="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="ADHD Claude Code rules — adhd-mode | Claude Code ADHD-Friendly Output Rules">
-<meta property="og:description" content="ADHD-friendly output rules for Claude Code. Make Claude lead with action, number steps, and stop saying 'Great question!' CLAUDE.md with @AGENTS.md import for always-on output.">
+<meta property="og:title" content="ADHD Claude Code rules — adhd-mode | Claude Code ADHD Rules">
+<meta property="og:description" content="ADHD-friendly output rules for Claude Code.">
 <meta property="og:url" content="https://devanimecx.github.io/adhd-mode/pages/claude-code.html">
 <meta property="og:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
-<meta property="og:site_name" content="adhd-mode">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ADHD Claude Code rules — adhd-mode | Claude Code ADHD-Friendly Output Rules">
-<meta name="twitter:description" content="ADHD-friendly output rules for Claude Code. Make Claude lead with action, number steps, and stop saying 'Great question!' CLAUDE.md with @AGENTS.md import for always-on output.">
-<meta name="twitter:image" content="https://opengraph.githubassets.com/1/DevAnimecx/adhd-mode">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants. One AGENTS.md file works in 20+ tools.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.0.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in Claude Code?", "acceptedAnswer": {"@type": "Answer", "text": "Place CLAUDE.md at your project root with @AGENTS.md import. Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/CLAUDE.md && curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md"}}, {"@type": "Question", "name": "Can I use the original i-have-adhd skill instead?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. The original i-have-adhd plugin works in Claude Code with /i-have-adhd invocation. adhd-mode's CLAUDE.md gives always-on output without invoking. Both can coexist."}}, {"@type": "Question", "name": "What is the @AGENTS.md import in CLAUDE.md?", "acceptedAnswer": {"@type": "Answer", "text": "It's Claude Code's import syntax. @AGENTS.md pulls the contents of AGENTS.md into Claude Code's context, giving you always-on ADHD output without a skill invocation."}}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"adhd-mode","item":"https://devanimecx.github.io/adhd-mode/"},{"@type":"ListItem","position":2,"name":"Claude Code","item":"https://devanimecx.github.io/adhd-mode/pages/claude-code.html"}]}</script>
-<style>
+<meta name="twitter:title" content="ADHD Claude Code rules — adhd-mode | Claude Code ADHD Rules">
+<meta name="twitter:description" content="ADHD-friendly output rules for Claude Code.">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in Claude Code?", "acceptedAnswer": {"@type": "Answer", "text": "Place CLAUDE.md with @AGENTS.md import at project root."}}, {"@type": "Question", "name": "Can I use the original i-have-adhd skill?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Both can coexist. On-demand + always-on."}}, {"@type": "Question", "name": "What is @AGENTS.md import?", "acceptedAnswer": {"@type": "Answer", "text": "Claude Code's syntax to pull AGENTS.md into context."}}]}</script>
+<style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
+
+/* ===== Reset ===== */
 *{margin:0;padding:0;box-sizing:border-box}
-:root{--bg:#0a0e14;--bg2:#0d1117;--surface:rgba(22,27,34,0.6);--surface-solid:#161b22;--border:rgba(48,54,61,0.6);--border-bright:rgba(88,166,255,0.3);--text:#e6edf3;--muted:#8b949e;--accent:#58a6ff;--accent2:#79c0ff;--green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#f778ba;--radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;--mono:'SF Mono','Fira Code',monospace;--maxw:920px;--glow:0 0 40px rgba(88,166,255,0.15)}
+:root{
+  --bg:#050810;--bg2:#0a0e14;--surface:rgba(15,20,28,0.6);--surface-solid:#0f1418;
+  --border:rgba(48,54,61,0.4);--border-bright:rgba(88,166,255,0.3);
+  --text:#e6edf3;--muted:#7d8590;--accent:#58a6ff;--accent2:#79c0ff;
+  --green:#3fb950;--yellow:#d29922;--red:#f85149;--purple:#bc8cff;--pink:#f778ba;
+  --radius:16px;--font:-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;
+  --mono:'SF Mono','Fira Code',ui-monospace,monospace;
+  --maxw:920px;
+}
 html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font);line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-/* Gradient orbs background */
-body::before{content:'';position:fixed;top:-20%;left:-10%;width:60%;height:60%;background:radial-gradient(circle,rgba(88,166,255,0.08),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float1 20s ease-in-out infinite}
-body::after{content:'';position:fixed;bottom:-20%;right:-10%;width:50%;height:50%;background:radial-gradient(circle,rgba(63,185,80,0.06),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:float2 25s ease-in-out infinite}
-@keyframes float1{0%,100%{transform:translate(0,0)}50%{transform:translate(30px,-30px)}}
-@keyframes float2{0%,100%{transform:translate(0,0)}50%{transform:translate(-20px,20px)}}
-a{color:var(--accent);text-decoration:none;transition:color .2s}
-a:hover{color:var(--accent2)}
+
+/* ===== Aurora background orbs ===== */
+body::before{content:'';position:fixed;top:-15%;left:-10%;width:55%;height:55%;background:radial-gradient(circle,rgba(88,166,255,0.07),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:orb1 20s ease-in-out infinite}
+body::after{content:'';position:fixed;bottom:-15%;right:-10%;width:50%;height:50%;background:radial-gradient(circle,rgba(63,185,80,0.05),transparent 70%);border-radius:50%;pointer-events:none;z-index:0;animation:orb2 25s ease-in-out infinite}
+@keyframes orb1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(40px,-30px) scale(1.1)}}
+@keyframes orb2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,20px) scale(0.9)}}
+
+/* ===== Grid pattern background (Magic UI: Grid Pattern) ===== */
+.grid-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none;
+  background-image:
+    linear-gradient(rgba(88,166,255,0.04) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(88,166,255,0.04) 1px,transparent 1px);
+  background-size:50px 50px;
+  mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 40%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 80% 50% at 50% 0%,black 40%,transparent 100%);
+}
+
+/* ===== Scroll progress bar (Magic UI: Scroll Progress) ===== */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:0%;
+  background:linear-gradient(90deg,var(--accent),var(--purple),var(--green));
+  z-index:200;transition:width .1s;
+  box-shadow:0 0 10px rgba(88,166,255,0.5);
+}
+
+/* ===== Container ===== */
 .container{max-width:var(--maxw);margin:0 auto;padding:0 24px;position:relative;z-index:1}
-code{font-family:var(--mono);font-size:.88em;background:rgba(88,166,255,0.1);padding:2px 7px;border-radius:6px;color:var(--accent2)}
-pre{background:var(--surface-solid);border:1px solid var(--border);border-radius:12px;padding:20px;overflow-x:auto;margin:20px 0;position:relative}
-pre code{background:none;padding:0;color:var(--text);font-size:.85em;line-height:1.6}
-/* Nav */
-nav{position:sticky;top:0;z-index:100;background:rgba(10,14,20,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
-nav .container{display:flex;justify-content:space-between;align-items:center;padding:14px 24px}
-nav .logo{font-weight:800;font-size:1.15rem;display:flex;align-items:center;gap:8px}
+
+/* ===== Nav ===== */
+nav{position:sticky;top:0;z-index:100;background:rgba(5,8,16,0.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+nav .container{display:flex;justify-content:space-between;align-items:center;padding:12px 24px}
+nav .logo{font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:6px}
 nav .logo span{background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-nav .links{display:flex;gap:24px;align-items:center}
-nav .links a{color:var(--muted);font-size:.88rem;font-weight:600;transition:color .2s}
+nav .links{display:flex;gap:20px;align-items:center}
+nav .links a{color:var(--muted);font-size:.85rem;font-weight:600;transition:color .2s}
 nav .links a:hover{color:var(--accent)}
-nav .star-btn{background:rgba(88,166,255,0.1);border:1px solid var(--border-bright);padding:6px 16px;border-radius:20px;color:var(--accent);font-size:.85rem;font-weight:600}
-@media(max-width:640px){nav .links{display:none}}
-/* Hero */
-.hero{padding:100px 0 80px;text-align:center}
-.hero h1{font-size:3.2rem;font-weight:900;letter-spacing:-0.035em;line-height:1.1;margin-bottom:20px}
-.hero h1 .grad{background:linear-gradient(135deg,var(--accent) 0%,var(--purple) 50%,var(--green) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 8s ease-in-out infinite;background-size:200% 200%}
-@keyframes shimmer{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.hero .sub{font-size:1.25rem;color:var(--muted);max-width:620px;margin:0 auto 36px}
-.hero .badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:36px}
-.badge{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:24px;font-size:.82rem;font-weight:600;border:1px solid var(--border);background:var(--surface);backdrop-filter:blur(10px)}
-.badge.g{color:var(--green);border-color:rgba(63,185,80,0.3)}
-.badge.b{color:var(--accent);border-color:rgba(88,166,255,0.3)}
-.badge.y{color:var(--yellow);border-color:rgba(210,153,34,0.3)}
-.badge.p{color:var(--purple);border-color:rgba(188,140,255,0.3)}
-.cta-group{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:12px;font-weight:700;font-size:1rem;border:none;cursor:pointer;text-decoration:none;transition:all .25s}
-.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(88,166,255,0.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(88,166,255,0.4);color:#fff}
+nav .star-btn{background:rgba(88,166,255,0.08);border:1px solid var(--border-bright);padding:5px 14px;border-radius:20px;color:var(--accent);font-size:.82rem;font-weight:600;transition:all .2s}
+nav .star-btn:hover{background:rgba(88,166,255,0.15);transform:translateY(-1px)}
+@media(max-width:768px){nav .links{display:none}}
+
+/* ===== Animated Shiny Text (Magic UI: Animated Shiny Text) ===== */
+.shiny-text{background:linear-gradient(110deg,var(--muted) 45%,var(--text) 50%,var(--muted) 55%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shiny 3s linear infinite}
+@keyframes shiny{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* ===== Aurora Text (Magic UI: Aurora Text) ===== */
+.aurora-text{background:linear-gradient(135deg,var(--accent) 0%,var(--purple) 30%,var(--pink) 50%,var(--green) 80%,var(--accent) 100%);background-size:300% 300%;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:aurora 8s ease-in-out infinite}
+@keyframes aurora{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+/* ===== Word Rotate (Magic UI: Word Rotate) ===== */
+.word-rotate{display:inline-block;height:1.2em;overflow:hidden;vertical-align:bottom}
+.word-rotate .words{display:flex;flex-direction:column;animation:rotate-words 9s infinite}
+.word-rotate .words span{height:1.2em;display:block;line-height:1.2em}
+@keyframes rotate-words{
+  0%,30%{transform:translateY(0)}
+  33%,63%{transform:translateY(-1.2em)}
+  66%,96%{transform:translateY(-2.4em)}
+  100%{transform:translateY(0)}
+}
+
+/* ===== Shimmer Button (Magic UI: Shimmer Button) ===== */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:10px;font-weight:700;font-size:.95rem;border:none;cursor:pointer;text-decoration:none;transition:all .25s;position:relative;overflow:hidden}
+.btn-primary{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;box-shadow:0 4px 20px rgba(88,166,255,0.25)}
+.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent);animation:shimmer 3s infinite}
+@keyframes shimmer{0%{left:-100%}100%{left:100%}}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(88,166,255,0.35);color:#fff}
 .btn-secondary{background:var(--surface);color:var(--text);border:1px solid var(--border);backdrop-filter:blur(10px)}
 .btn-secondary:hover{border-color:var(--accent);transform:translateY(-2px);color:var(--accent)}
-/* Stats */
-.stats{display:flex;justify-content:center;gap:56px;padding:48px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:48px 0}
+
+/* ===== Hero ===== */
+.hero{padding:90px 0 70px;text-align:center}
+.hero h1{font-size:3rem;font-weight:900;letter-spacing:-0.035em;line-height:1.15;margin-bottom:18px}
+.hero .sub{font-size:1.15rem;color:var(--muted);max-width:580px;margin:0 auto 32px}
+.hero .badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:32px}
+.badge{display:inline-flex;align-items:center;gap:5px;padding:6px 14px;border-radius:20px;font-size:.8rem;font-weight:600;border:1px solid var(--border);background:var(--surface);backdrop-filter:blur(10px);transition:all .2s}
+.badge:hover{transform:translateY(-1px);border-color:var(--border-bright)}
+.badge.g{color:var(--green);border-color:rgba(63,185,80,0.25)}
+.badge.b{color:var(--accent);border-color:rgba(88,166,255,0.25)}
+.badge.y{color:var(--yellow);border-color:rgba(210,153,34,0.25)}
+.badge.p{color:var(--purple);border-color:rgba(188,140,255,0.25)}
+.cta-group{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===== Number Ticker (Magic UI: Number Ticker) ===== */
+.stats{display:flex;justify-content:center;gap:48px;padding:40px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:40px 0}
 .stat{text-align:center}
-.stat .num{font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat .label{font-size:.8rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:4px}
-@media(max-width:640px){.stats{flex-direction:column;gap:32px}.hero h1{font-size:2.2rem}.hero .sub{font-size:1.05rem}}
-/* Sections */
-section{padding:64px 0}
-section h2{font-size:2rem;font-weight:800;letter-spacing:-0.025em;margin-bottom:8px}
-section .sec-sub{color:var(--muted);font-size:1.05rem;margin-bottom:32px}
-section h3{font-size:1.25rem;font-weight:700;margin:36px 0 14px}
-/* Glass cards */
-.glass{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:28px;backdrop-filter:blur(10px);transition:border-color .3s,transform .3s}
-.glass:hover{border-color:var(--border-bright);transform:translateY(-2px)}
-/* Before/After */
-.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0}
-.ba-card{border:1px solid;border-radius:14px;padding:24px;background:var(--surface);backdrop-filter:blur(10px)}
-.ba-card.before{border-color:rgba(248,81,73,0.3)}
-.ba-card.after{border-color:rgba(63,185,80,0.3)}
-.ba-label{font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:14px;display:flex;align-items:center;gap:6px}
+.stat .num{font-size:2.6rem;font-weight:900;background:linear-gradient(135deg,var(--accent),var(--green));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat .label{font-size:.78rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:2px}
+@media(max-width:640px){.stats{flex-direction:column;gap:24px}.hero h1{font-size:2rem}.hero .sub{font-size:1rem}}
+
+/* ===== Meteors (Magic UI: Meteors) ===== */
+.meteors{position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;pointer-events:none;z-index:0}
+.meteor{position:absolute;top:-10px;width:2px;height:2px;background:#fff;border-radius:50%;box-shadow:0 0 6px 2px rgba(255,255,255,0.1)}
+.meteor::after{content:'';position:absolute;top:50%;transform:translateY(-50%);width:50px;height:1px;background:linear-gradient(90deg,#fff,transparent)}
+.meteor:nth-child(1){left:20%;animation:meteor 8s linear infinite;animation-delay:0s}
+.meteor:nth-child(2){left:50%;animation:meteor 10s linear infinite;animation-delay:2s}
+.meteor:nth-child(3){left:80%;animation:meteor 7s linear infinite;animation-delay:4s}
+.meteor:nth-child(4){left:10%;animation:meteor 12s linear infinite;animation-delay:1s}
+.meteor:nth-child(5){left:65%;animation:meteor 9s linear infinite;animation-delay:3s}
+@keyframes meteor{0%{transform:translate(0,0) rotate(45deg);opacity:1}80%{opacity:1}100%{transform:translate(-300px,300px) rotate(45deg);opacity:0}}
+
+/* ===== Neon Gradient Card (Magic UI: Neon Gradient Card) ===== */
+.neon-card{position:relative;background:var(--surface);border-radius:14px;padding:24px;backdrop-filter:blur(10px);overflow:hidden;transition:transform .3s}
+.neon-card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,rgba(88,166,255,0.4),rgba(188,140,255,0.2),rgba(63,185,80,0.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+.neon-card:hover::before{opacity:1}
+.neon-card:hover{transform:translateY(-3px)}
+.neon-card .icon{font-size:1.5rem;margin-bottom:8px}
+.neon-card h4{font-size:1.02rem;font-weight:700;margin-bottom:6px}
+.neon-card p{font-size:.88rem;color:var(--muted);line-height:1.6}
+
+/* ===== Magic Card spotlight (Magic UI: Magic Card) ===== */
+.magic-card{position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;backdrop-filter:blur(10px);overflow:hidden;transition:all .3s}
+.magic-card::before{content:'';position:absolute;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(88,166,255,0.1),transparent 70%);opacity:0;transition:opacity .3s;pointer-events:none;left:var(--mx,50%);top:var(--my,50%);transform:translate(-50%,-50%)}
+.magic-card:hover::before{opacity:1}
+.magic-card:hover{border-color:var(--border-bright);transform:translateY(-2px)}
+
+/* ===== Sections ===== */
+section{padding:56px 0}
+section h2{font-size:1.85rem;font-weight:800;letter-spacing:-0.025em;margin-bottom:6px}
+section .sec-sub{color:var(--muted);font-size:1rem;margin-bottom:28px}
+section h3{font-size:1.15rem;font-weight:700;margin:32px 0 12px}
+
+/* ===== Before/After ===== */
+.ba-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:24px 0}
+.ba-card{border:1px solid;border-radius:12px;padding:22px;background:var(--surface);backdrop-filter:blur(10px)}
+.ba-card.before{border-color:rgba(248,81,73,0.25)}
+.ba-card.after{border-color:rgba(63,185,80,0.25)}
+.ba-label{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;display:flex;align-items:center;gap:5px}
 .ba-card.before .ba-label{color:var(--red)}
 .ba-card.after .ba-label{color:var(--green)}
-.ba-card blockquote{font-size:.95rem;line-height:1.7}
+.ba-card blockquote{font-size:.92rem;line-height:1.65}
 .ba-card.before blockquote{color:var(--muted);font-style:italic}
 .ba-card.after blockquote{color:var(--text)}
 @media(max-width:640px){.ba-grid{grid-template-columns:1fr}}
-/* Feature grid */
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:28px 0}
-.feature{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:24px;backdrop-filter:blur(10px);transition:all .3s}
-.feature:hover{border-color:var(--border-bright);transform:translateY(-3px);box-shadow:var(--glow)}
-.feature .icon{font-size:1.6rem;margin-bottom:10px}
-.feature h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.feature p{font-size:.9rem;color:var(--muted);line-height:1.6}
-/* Table */
-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.92rem}
-th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--border)}
-th{font-weight:700;color:var(--muted);font-size:.8rem;text-transform:uppercase;letter-spacing:0.05em}
+
+/* ===== Feature grid ===== */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:24px 0}
+
+/* ===== Table ===== */
+table{width:100%;border-collapse:collapse;margin:20px 0;font-size:.9rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--border)}
+th{font-weight:700;color:var(--muted);font-size:.78rem;text-transform:uppercase;letter-spacing:0.05em}
 .yes{color:var(--green);font-weight:600}.no{color:var(--red)}.partial{color:var(--yellow)}
-/* Tabs */
+
+/* ===== Tabs ===== */
 .tabs{display:flex;gap:2px;flex-wrap:wrap;margin-bottom:0;border-bottom:2px solid var(--border);overflow-x:auto}
-.tab{padding:12px 20px;cursor:pointer;border:none;background:none;color:var(--muted);font-size:.9rem;font-weight:600;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
+.tab{padding:10px 18px;cursor:pointer;border:none;background:none;color:var(--muted);font-size:.85rem;font-weight:600;border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap}
 .tab.active{color:var(--accent);border-bottom-color:var(--accent)}
 .tab:hover{color:var(--text)}
-.tab-panel{display:none;padding:24px 0}
+.tab-panel{display:none;padding:22px 0}
 .tab-panel.active{display:block;animation:fadeIn .3s ease}
-@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-/* Quickstart */
-.quickstart{background:var(--surface-solid);border:1px solid var(--border);border-radius:14px;padding:24px;margin:24px 0}
-.quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:14px}
-.dots{display:flex;gap:6px}
-.dot{width:12px;height:12px;border-radius:50%}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== Quickstart terminal ===== */
+.quickstart{background:var(--surface-solid);border:1px solid var(--border);border-radius:12px;padding:20px;margin:20px 0}
+.quickstart .header{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.dots{display:flex;gap:5px}
+.dot{width:11px;height:11px;border-radius:50%}
 .dot.r{background:var(--red)}.dot.y{background:var(--yellow)}.dot.g{background:var(--green)}
-.qs-title{font-size:.82rem;color:var(--muted);margin-left:8px;font-family:var(--mono)}
-/* FAQ */
-.faq-item{border-bottom:1px solid var(--border);padding:18px 0}
-.faq-item summary{cursor:pointer;font-weight:600;font-size:1.05rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
+.qs-title{font-size:.78rem;color:var(--muted);margin-left:6px;font-family:var(--mono)}
+
+/* ===== Code blocks ===== */
+code{font-family:var(--mono);font-size:.86em;background:rgba(88,166,255,0.08);padding:2px 6px;border-radius:5px;color:var(--accent2)}
+pre{background:var(--surface-solid);border:1px solid var(--border);border-radius:10px;padding:16px;overflow-x:auto;margin:16px 0}
+pre code{background:none;padding:0;color:var(--text);font-size:.82em;line-height:1.55}
+
+/* ===== FAQ ===== */
+.faq-item{border-bottom:1px solid var(--border);padding:16px 0}
+.faq-item summary{cursor:pointer;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;align-items:center;transition:color .2s}
 .faq-item summary:hover{color:var(--accent)}
-.faq-item summary::after{content:'+';font-size:1.4rem;color:var(--muted);transition:transform .2s}
+.faq-item summary::after{content:'+';font-size:1.3rem;color:var(--muted);transition:transform .2s}
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item p{margin-top:14px;color:var(--muted);line-height:1.7}
-/* Footer */
-footer{padding:48px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.88rem;position:relative;z-index:1}
+.faq-item p{margin-top:12px;color:var(--muted);line-height:1.65}
+
+/* ===== Marquee (Magic UI: Marquee) ===== */
+.marquee{overflow:hidden;white-space:nowrap;padding:16px 0;margin:24px 0;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
+.marquee-track{display:inline-flex;gap:32px;animation:marquee 25s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-item{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.9rem;font-weight:600}
+.marquee-item .dot-sm{width:6px;height:6px;border-radius:50%;background:var(--green)}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ===== CTA section ===== */
+.cta-section{text-align:center;padding:64px 0;background:linear-gradient(180deg,transparent,rgba(88,166,255,0.02));border-top:1px solid var(--border);margin-top:40px}
+
+/* ===== Footer ===== */
+footer{padding:40px 0;border-top:1px solid var(--border);text-align:center;color:var(--muted);font-size:.85rem;position:relative;z-index:1}
 footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
-/* Nav links for SEO pages */
-.page-nav{display:flex;gap:8px;flex-wrap:wrap;margin:32px 0;padding:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;backdrop-filter:blur(10px)}
-.page-nav a{padding:6px 14px;border-radius:8px;font-size:.85rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
+
+/* ===== Page nav ===== */
+.page-nav{display:flex;gap:6px;flex-wrap:wrap;margin:28px 0;padding:14px;background:var(--surface);border:1px solid var(--border);border-radius:10px;backdrop-filter:blur(10px)}
+.page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
-.page-nav a.current{background:rgba(88,166,255,0.15);color:var(--accent)}
-/* Scroll reveal */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-/* Inline list */
-ul.inline{list-style:none;display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}
-ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border:1px solid var(--border);font-size:.85rem;color:var(--muted)}
-/* CTA section */
-.cta-section{text-align:center;padding:80px 0;background:linear-gradient(180deg,transparent,rgba(88,166,255,0.03));border-top:1px solid var(--border);margin-top:48px}
+
+/* ===== AOS overrides ===== */
+[data-aos]{pointer-events:auto}
+
+/* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
+.dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
+  background-size:24px 24px;
+  mask-image:radial-gradient(ellipse 60% 40% at 50% 50%,black 30%,transparent 100%);
+  -webkit-mask-image:radial-gradient(ellipse 60% 40% at 50% 50%,black 30%,transparent 100%);
+}
+
+/* ===== Glass section ===== */
+.glass-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;margin:24px 0;backdrop-filter:blur(10px)}
+
+/* ===== Glow text ===== */
+.glow{text-shadow:0 0 30px rgba(88,166,255,0.3)}
+
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent2)}
 </style>
 </head><body>
+<div class="grid-bg"></div>
+<div class="scroll-progress"></div>
 <nav><div class="container">
 <div class="logo">⚡ <span>adhd-mode</span></div>
 <div class="links">
@@ -159,91 +264,63 @@ ul.inline li{padding:4px 12px;border-radius:8px;background:var(--surface);border
 </div></nav>
 <div class="container">
 
-<div class="hero reveal" style="padding:60px 0 40px;">
-<h1 style="font-size:2.4rem;">ADHD-friendly output rules for <span class="grad">Claude Code</span></h1>
-<p class="sub">ADHD-friendly output rules for Claude Code. Make Claude lead with action, number steps, and stop saying 'Great question!' CLAUDE.md with @AGENTS.md import for always-on output. One file. Always on. No slash command. No plugin marketplace.</p>
+<div class="hero" data-aos="fade-up" style="padding:60px 0 40px;">
+<h1 style="font-size:2.2rem;">ADHD-friendly output for <span class="aurora-text">Claude Code</span></h1>
+<p class="sub">ADHD-friendly output rules for Claude Code. One file. Always on. No slash command.</p>
 <div class="cta-group">
-<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
-<a href="#install" class="btn btn-secondary">Install for Claude Code →</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star</a>
+<a href="#install" class="btn btn-secondary">Install →</a>
 </div>
 </div>
 
-<section class="reveal">
+<section data-aos="fade-up">
 <h2>What this does</h2>
-<p class="sec-sub">Claude Code is a powerful AI coding tool, but it buries answers behind preamble, tangents, and closing pleasantries. adhd-mode fixes this by placing one file that Claude Code reads automatically, shaping every response to be action-first, numbered, and free of filler.</p>
+<p class="sec-sub">Claude Code buries answers behind preamble. adhd-mode fixes this with one file that Claude Code reads automatically.</p>
 <div class="features">
-<div class="feature"><div class="icon">⚡</div><h4>Action-first</h4><p>First line = something you can do now. Not context. Not a plan. The action.</p></div>
-<div class="feature"><div class="icon">🔢</div><h4>Numbered steps</h4><p>Multi-step tasks become numbered lists with one bounded action per step.</p></div>
-<div class="feature"><div class="icon">🔁</div><h4>Anti-decay</h4><p>Rules persist across turns with explicit re-injection. No fading after 5 turns.</p></div>
-<div class="feature"><div class="icon">📐</div><h4>Scope by shape</h4><p>Quick / Medium / Large instead of fabricated time estimates.</p></div>
+<div class="magic-card"><div class="icon">⚡</div><h4>Action-first</h4><p>First line = something you can do now.</p></div>
+<div class="magic-card"><div class="icon">🔢</div><h4>Numbered steps</h4><p>Multi-step tasks become numbered lists.</p></div>
+<div class="magic-card"><div class="icon">🔁</div><h4>Anti-decay</h4><p>Rules persist across turns with re-injection.</p></div>
+<div class="magic-card"><div class="icon">📐</div><h4>Scope by shape</h4><p>Quick / Medium / Large, not fabricated time.</p></div>
 </div>
 </section>
 
-<section id="install" class="reveal">
+<section id="install" data-aos="fade-up">
 <h2>Install for Claude Code</h2>
-<p class="sec-sub">Claude Code reads CLAUDE.md (not AGENTS.md) from the project root. adhd-mode's CLAUDE.md contains @AGENTS.md — Claude Code's import syntax that pulls AGENTS.md contents into context. This gives always-on ADHD output. For on-demand use, the SKILL.md plugin format is also included.</p>
 <div class="quickstart">
-<div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Claude Code install</span></div>
+<div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Claude Code</span></div>
 <pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/CLAUDE.md
 curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
 </div>
-<h3>Or use the universal AGENTS.md file</h3>
-<pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre>
-<p style="color:var(--muted);margin-top:8px;">The file is at <code>CLAUDE.md</code>. Restart Claude Code after installing.</p>
+<p style="color:var(--muted)">File at <code>CLAUDE.md</code>. Restart Claude Code after installing.</p>
 </section>
 
-<section class="reveal">
-<h2>Before / After in Claude Code</h2>
+<section data-aos="fade-up">
+<h2>Before / After</h2>
 <div class="ba-grid">
-<div class="ba-card before"><div class="ba-label">⚠ Before (default Claude Code)</div><blockquote>Great question! Let me take a look at your authentication flow. There are a few moving pieces here... [47 lines of context] ... Hope this helps! Let me know if you want to dig deeper.</blockquote></div>
-<div class="ba-card after"><div class="ba-label">✓ After (adhd-mode)</div><blockquote>Run <code>npm install jsonwebtoken@latest</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open <code>src/auth.ts</code><br>2. Replace <code>verifyToken</code> (lines 42-58)<br>3. Run <code>npm test -- auth.spec.ts</code><br><br>Next: paste the first failing line.</blockquote></div>
+<div class="ba-card before"><div class="ba-label">⚠ Before</div><blockquote>Great question! Let me take a look... [47 lines] ...Hope this helps!</blockquote></div>
+<div class="ba-card after"><div class="ba-label">✓ After</div><blockquote>Run <code>npm install jsonwebtoken</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open file<br>2. Replace function<br>3. Run tests<br><br>Next: paste failures.</blockquote></div>
 </div>
 </section>
 
-<section class="reveal">
-<h2>The 10 rules applied in Claude Code</h2>
-<table>
-<thead><tr><th>#</th><th>Rule</th><th>What changes in Claude Code</th></tr></thead>
-<tbody>
-<tr><td style="color:var(--accent);font-weight:700">1</td><td>Lead with the next action</td><td>Claude Code starts every response with the action, not context</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">2</td><td>Number multi-step tasks</td><td>Tasks become numbered lists, not prose paragraphs</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">3</td><td>End with one next action</td><td>Every response ends with one thing you can do in under 2 min</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">4</td><td>Suppress tangents</td><td>No "by the way" sidebars — finish the first task first</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">5</td><td>Restate state</td><td>Claude Code tells you "Step 3 of 5 done" every turn</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">6</td><td>Scope by shape</td><td>Quick / Medium / Large — not fabricated "15 min"</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">7</td><td>Make wins visible</td><td>Claude Code shows what now works, concretely</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">8</td><td>Matter-of-fact errors</td><td>No "uh oh" — just cause + fix</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">9</td><td>Cap lists at 5</td><td>Splits into "now" vs "later" to prevent overwhelm</td></tr>
-<tr><td style="color:var(--accent);font-weight:700">10</td><td>No preamble, no closers</td><td>No "Great question!" or "Hope this helps!"</td></tr>
-</tbody>
-</table>
-<p><a href="https://github.com/DevAnimecx/adhd-mode/blob/main/CLAUDE.md">View the Claude Code rule file on GitHub →</a></p>
-</section>
-
-<section class="reveal">
+<section data-aos="fade-up">
 <h2>How Claude Code loads the rules</h2>
-<p class="sec-sub">Technical details on how Claude Code discovers and applies the output rules.</p>
-<p>Claude Code reads CLAUDE.md (not AGENTS.md) from the project root. adhd-mode's CLAUDE.md contains @AGENTS.md — Claude Code's import syntax that pulls AGENTS.md contents into context. This gives always-on ADHD output. For on-demand use, the SKILL.md plugin format is also included.</p>
-<p>The file uses Claude Code's native rule-loading mechanism. Once placed at the correct path, Claude Code reads it on startup and applies the rules to every AI interaction — chat, inline completions, and code generation. The rules stay on until you say "stop adhd mode" in chat.</p>
+<p>Claude Code reads CLAUDE.md. @AGENTS.md import gives always-on. SKILL.md plugin also included.</p>
 </section>
 
-<section class="reveal">
-<h2>Frequently asked questions about Claude Code + adhd-mode</h2>
-<details class="faq-item"><summary>How do I set up ADHD rules in Claude Code?</summary><p>Place CLAUDE.md at your project root with @AGENTS.md import. Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/CLAUDE.md && curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</p></details>
-<details class="faq-item"><summary>Can I use the original i-have-adhd skill instead?</summary><p>Yes. The original plugin works with /i-have-adhd invocation. adhd-mode's CLAUDE.md gives always-on output. Both can coexist.</p></details>
-<details class="faq-item"><summary>What is the @AGENTS.md import?</summary><p>It's Claude Code's import syntax. @AGENTS.md pulls the contents of AGENTS.md into Claude Code's context.</p></details>
+<section data-aos="fade-up">
+<h2>FAQ</h2>
+<details class="faq-item"><summary>How do I set up ADHD rules in Claude Code?</summary><p>Place CLAUDE.md with @AGENTS.md import at project root.</p></details>
+<details class="faq-item"><summary>Can I use the original i-have-adhd skill?</summary><p>Yes. Both can coexist. On-demand + always-on.</p></details>
+<details class="faq-item"><summary>What is @AGENTS.md import?</summary><p>Claude Code's syntax to pull AGENTS.md into context.</p></details>
 </section>
 
-
-<div class="cta-section reveal">
+<div class="cta-section" data-aos="fade-up">
 <h2>Ready to fix Claude Code's output?</h2>
-<p style="color:var(--muted);margin-bottom:32px;">One file. 30 seconds. Claude Code starts respecting your working memory.</p>
+<p style="color:var(--muted);margin-bottom:28px;">One file. 30 seconds.</p>
 <div class="cta-group">
-<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star on GitHub</a>
+<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star</a>
 <a href="#install" class="btn btn-secondary">Install for Claude Code</a>
 </div>
-</div>
-
 </div>
 
 <div class="page-nav">
@@ -259,20 +336,22 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
 </div>
-
+</div>
 <footer><div class="container">
-<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT License</a> · Rules adapted from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
-<p style="margin-top:8px;">No accounts · No telemetry · No tracking · Just one file</p>
+<p><a href="https://github.com/DevAnimecx/adhd-mode">adhd-mode</a> · <a href="https://github.com/DevAnimecx/adhd-mode/blob/main/LICENSE">MIT</a> · Rules from <a href="https://github.com/ayghri/i-have-adhd">i-have-adhd</a> (MIT)</p>
+<p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
 </div></footer>
-
 <script>
-const obs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')})},{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(e=>obs.observe(e));
-function showTab(e,name){document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
-function animateCount(el){const target=parseInt(el.dataset.count);let current=0;const step=target/40;const timer=setInterval(()=>{current+=step;if(current>=target){el.textContent=target;clearInterval(timer);}else{el.textContent=Math.floor(current);}},20);}
-const countObs=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target);}})},{threshold:0.5});
-document.querySelectorAll('[data-count]').forEach(e=>countObs.observe(e));
+AOS.init({duration:600,once:true,offset:80});
+// Scroll progress
+window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
+// Tabs
+function showTab(e,name){document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active')});e.target.classList.add('active');document.getElementById('tab-'+name).classList.add('active');}
+// Number ticker
+function animateCount(el){var target=parseInt(el.dataset.count);var cur=0;var step=target/30;var t=setInterval(function(){cur+=step;if(cur>=target){el.textContent=target;clearInterval(t)}else{el.textContent=Math.floor(cur)}},20);}
+var co=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){animateCount(e.target);co.unobserve(e.target)}})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(function(e){co.observe(e)});
+// Magic card spotlight
+document.querySelectorAll('.magic-card').forEach(function(card){card.addEventListener('mousemove',function(e){var r=card.getBoundingClientRect();card.style.setProperty('--mx',(e.clientX-r.left)+'px');card.style.setProperty('--my',(e.clientY-r.top)+'px')})});
 </script>
-
-</body>
-</html>
+</body></html>
