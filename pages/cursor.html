@@ -208,7 +208,7 @@ pre code{background:none;padding:0;color:var(--text);font-size:.82em;line-height
 .faq-item p{margin-top:12px;color:var(--muted);line-height:1.65}
 
 /* ===== Marquee (Magic UI: Marquee) ===== */
-.marquee{overflow:hidden;white-space:nowrap;padding:16px 0;margin:24px 0;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,ransparent,black 10%,black 90%,transparent)}
+.marquee{overflow:hidden;white-space:nowrap;padding:16px 0;margin:24px 0;mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,black 10%,black 90%,transparent)}
 .marquee-track{display:inline-flex;gap:32px;animation:marquee 25s linear infinite}
 .marquee:hover .marquee-track{animation-play-state:paused}
 .marquee-item{display:inline-flex;align-items:center;gap:6px;color:var(--muted);font-size:.9rem;font-weight:600}
@@ -251,7 +251,7 @@ a:hover{color:var(--accent2)}
 <div class="grid-bg"></div>
 <div class="scroll-progress"></div>
 <nav><div class="container">
-<div class="logo">⚑ <span>adhd-mode</span></div>
+<div class="logo">⚡ <span>adhd-mode</span></div>
 <div class="links">
 <a href="https://devanimecx.github.io/adhd-mode/">Home</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
@@ -274,15 +274,18 @@ a:hover{color:var(--accent2)}
 </div>
 
 <section data-aos="fade-up">
+<h2>What this does</h2>
+<p class="sec-sub">Cursor buries answers behind preamble. adhd-mode fixes this with one file that Cursor reads automatically.</p>
 <div class="features">
-<div class="magic-card"><div class="icon">☄</div><h4>Action-first</h4><p>First line = something you can do now.</p></div>
+<div class="magic-card"><div class="icon">⚡</div><h4>Action-first</h4><p>First line = something you can do now.</p></div>
 <div class="magic-card"><div class="icon">🔢</div><h4>Numbered steps</h4><p>Multi-step tasks become numbered lists.</p></div>
-<div class="magic-card"><div class="icon">🔈</div><h4>Anti-decay</h4><p>Rules persist across turns with re-injection.</p></div>
+<div class="magic-card"><div class="icon">🔁</div><h4>Anti-decay</h4><p>Rules persist across turns with re-injection.</p></div>
 <div class="magic-card"><div class="icon">📐</div><h4>Scope by shape</h4><p>Quick / Medium / Large, not fabricated time.</p></div>
 </div>
 </section>
 
 <section id="install" data-aos="fade-up">
+<h2>Install for Cursor</h2>
 <div class="quickstart">
 <div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Cursor</span></div>
 <pre><code>mkdir -p .cursor/rules
@@ -292,6 +295,7 @@ curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx
 </section>
 
 <section data-aos="fade-up">
+<h2>Before / After</h2>
 <div class="ba-grid">
 <div class="ba-card before"><div class="ba-label">⚠ Before</div><blockquote>Great question! Let me take a look... [47 lines] ...Hope this helps!</blockquote></div>
 <div class="ba-card after"><div class="ba-label">✓ After</div><blockquote>Run <code>npm install jsonwebtoken</code>, then edit <code>src/auth.ts:42</code>.<br><br>1. Open file<br>2. Replace function<br>3. Run tests<br><br>Next: paste failures.</blockquote></div>
@@ -299,20 +303,26 @@ curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx
 </section>
 
 <section data-aos="fade-up">
+<h2>How Cursor loads the rules</h2>
 <p>Cursor uses .mdc files in .cursor/rules/ with alwaysApply: true. Also reads AGENTS.md natively.</p>
 </section>
 
 <section data-aos="fade-up">
+<h2>FAQ</h2>
 <details class="faq-item"><summary>How do I set up ADHD rules in Cursor?</summary><p>Place a .mdc file in .cursor/rules/ with alwaysApply: true.</p></details>
 <details class="faq-item"><summary>Do rules work in Agent mode?</summary><p>Yes. alwaysApply: true injects into every Cursor Agent chat.</p></details>
 <details class="faq-item"><summary>Can I use AGENTS.md instead?</summary><p>Yes. Cursor reads AGENTS.md natively. Both can coexist.</p></details>
 </section>
+
 <div class="cta-section" data-aos="fade-up">
+<h2>Ready to fix Cursor's output?</h2>
+<p style="color:var(--muted);margin-bottom:28px;">One file. 30 seconds.</p>
 <div class="cta-group">
 <a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star</a>
 <a href="#install" class="btn btn-secondary">Install for Cursor</a>
 </div>
 </div>
+
 <div class="page-nav">
 <a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
@@ -325,12 +335,6 @@ curl -o .cursor/rules/adhd-mode.mdc https://raw.githubusercontent.com/DevAnimecx
 <a href="https://devanimecx.github.io/adhd-mode/pages/install.html">Install</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">10 Rules</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/faq.html">FAQ</a>
-</div>
-</div>
-<div class="cta-section" data-aos="fade-up">
-<div class="cta-group">
-<a href="https://github.com/DevAnimecx/adhd-mode" class="btn btn-primary">★ Star</a>
-<a href="#install" class="btn btn-secondary">Install for Cursor</a>
 </div>
 </div>
 <footer><div class="container">
