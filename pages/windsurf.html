@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ADHD Windsurf rules — adhd-mode | Windsurf ADHD Rules">
 <meta name="twitter:description" content="ADHD-friendly output rules for Windsurf.">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How do I set up ADHD rules in Windsurf?", "acceptedAnswer": {"@type": "Answer", "text": "Place a .md file in .windsurf/rules/ with trigger: always_on."}}, {"@type": "Question", "name": ".windsurfrules vs .windsurf/rules/?", "acceptedAnswer": {"@type": "Answer", "text": "Legacy vs modern format. adhd-mode ships both."}}, {"@type": "Question", "name": "Does Windsurf read AGENTS.md?", "acceptedAnswer": {"@type": "Answer", "text": "Experimental. Use .windsurf/rules/ for strongest guarantee."}}]}</script>
 <style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
@@ -227,9 +227,6 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== AOS overrides ===== */
-[data-aos]{pointer-events:auto}
-
 /* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
 .dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
@@ -246,6 +243,17 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ===== Safe page-load animations (zero external deps, content always visible) ===== */
+@keyframes slideUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+.hero{animation:slideUp .7s ease}
+section{animation:slideUp .5s ease}
+.stats{animation:slideUp .5s ease .1s}
+.neon-card,.magic-card{animation:slideUp .4s ease}
+.ba-card{animation:slideUp .4s ease}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </style>
 </head><body>
 <div class="grid-bg"></div>
@@ -264,7 +272,7 @@ a:hover{color:var(--accent2)}
 </div></nav>
 <div class="container">
 
-<div class="hero" data-aos="fade-up" style="padding:60px 0 40px;">
+<div class="hero" style="padding:60px 0 40px;">
 <h1 style="font-size:2.2rem;">ADHD-friendly output for <span class="aurora-text">Windsurf</span></h1>
 <p class="sub">ADHD-friendly output rules for Windsurf. One file. Always on. No slash command.</p>
 <div class="cta-group">
@@ -273,7 +281,7 @@ a:hover{color:var(--accent2)}
 </div>
 </div>
 
-<section data-aos="fade-up">
+<section>
 <h2>What this does</h2>
 <p class="sec-sub">Windsurf buries answers behind preamble. adhd-mode fixes this with one file that Windsurf reads automatically.</p>
 <div class="features">
@@ -284,7 +292,7 @@ a:hover{color:var(--accent2)}
 </div>
 </section>
 
-<section id="install" data-aos="fade-up">
+<section id="install">
 <h2>Install for Windsurf</h2>
 <div class="quickstart">
 <div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Windsurf</span></div>
@@ -294,7 +302,7 @@ curl -o .windsurf/rules/adhd-mode.md https://raw.githubusercontent.com/DevAnimec
 <p style="color:var(--muted)">File at <code>rules/windsurf/rules/adhd-mode.md</code>. Restart Windsurf after installing.</p>
 </section>
 
-<section data-aos="fade-up">
+<section>
 <h2>Before / After</h2>
 <div class="ba-grid">
 <div class="ba-card before"><div class="ba-label">⚠ Before</div><blockquote>Great question! Let me take a look... [47 lines] ...Hope this helps!</blockquote></div>
@@ -302,19 +310,19 @@ curl -o .windsurf/rules/adhd-mode.md https://raw.githubusercontent.com/DevAnimec
 </div>
 </section>
 
-<section data-aos="fade-up">
+<section>
 <h2>How Windsurf loads the rules</h2>
 <p>Windsurf uses .windsurf/rules/*.md with trigger: always_on. Legacy .windsurfrules also works.</p>
 </section>
 
-<section data-aos="fade-up">
+<section>
 <h2>FAQ</h2>
 <details class="faq-item"><summary>How do I set up ADHD rules in Windsurf?</summary><p>Place a .md file in .windsurf/rules/ with trigger: always_on.</p></details>
 <details class="faq-item"><summary>.windsurfrules vs .windsurf/rules/?</summary><p>Legacy vs modern format. adhd-mode ships both.</p></details>
 <details class="faq-item"><summary>Does Windsurf read AGENTS.md?</summary><p>Experimental. Use .windsurf/rules/ for strongest guarantee.</p></details>
 </section>
 
-<div class="cta-section" data-aos="fade-up">
+<div class="cta-section">
 <h2>Ready to fix Windsurf's output?</h2>
 <p style="color:var(--muted);margin-bottom:28px;">One file. 30 seconds.</p>
 <div class="cta-group">
@@ -342,7 +350,6 @@ curl -o .windsurf/rules/adhd-mode.md https://raw.githubusercontent.com/DevAnimec
 <p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
 </div></footer>
 <script>
-AOS.init({duration:600,once:true,offset:80});
 // Scroll progress
 window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
 // Tabs
