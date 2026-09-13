@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Install adhd-mode — adhd-mode">
 <meta name="twitter:description" content="One file. 30 seconds. Every AI tool.">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How to install?", "acceptedAnswer": {"@type": "Answer", "text": "curl -O .../AGENTS.md"}}, {"@type": "Question", "name": "How to uninstall?", "acceptedAnswer": {"@type": "Answer", "text": "Delete the file or say 'stop adhd mode'"}}, {"@type": "Question", "name": "Is it safe?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Pinned URLs, backup, idempotent."}}]}</script>
 <style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
@@ -135,7 +135,7 @@ nav .star-btn:hover{background:rgba(88,166,255,0.15);transform:translateY(-1px)}
 
 /* ===== Neon Gradient Card (Magic UI: Neon Gradient Card) ===== */
 .neon-card{position:relative;background:var(--surface);border-radius:14px;padding:24px;backdrop-filter:blur(10px);overflow:hidden;transition:transform .3s}
-.neon-card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,rgba(88,166,255,0.4),rgba(188,140,255,0.2),rgba(63,185,80,0.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
+.neon-card::before{content:'';position:absolute;inset:0;border-radius:14px;padding:1px;background:linear-gradient(135deg,var(88,166,255,0.4),var(188,140,255,0.2),var(63,185,80,0.3));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .3s}
 .neon-card:hover::before{opacity:1}
 .neon-card:hover{transform:translateY(-3px)}
 .neon-card .icon{font-size:1.5rem;margin-bottom:8px}
@@ -227,9 +227,6 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== AOS overrides ===== */
-[data-aos]{pointer-events:auto}
-
 /* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
 .dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
@@ -246,6 +243,17 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ===== Safe page-load animations (zero external deps, content always visible) ===== */
+@keyframes slideUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+.hero{animation:slideUp .7s ease}
+section{animation:slideUp .5s ease}
+.stats{animation:slideUp .5s ease .1s}
+.neon-card,.magic-card{animation:slideUp .4s ease}
+.ba-card{animation:slideUp .4s ease}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </style>
 </head><body>
 <div class="grid-bg"></div>
@@ -263,11 +271,11 @@ a:hover{color:var(--accent2)}
 </div>
 </div></nav>
 <div class="container">
-<div class="hero" data-aos="fade-up" style="padding:60px 0 40px;">
+<div class="hero" style="padding:60px 0 40px;">
 <h1 style="font-size:2.2rem;"><span class="aurora-text">Install adhd-mode</span></h1>
 <p class="sub">One file. 30 seconds. Every AI tool.</p>
 </div>
-<section data-aos="fade-up"><h2>Install</h2><div class="quickstart"><div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Terminal</span></div><pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre></div><p>For Claude Code: <code>curl -O .../CLAUDE.md</code></p><p>Installer: <code>curl -sSL .../install/install.sh | bash</code></p></section>
+<section><h2>Install</h2><div class="quickstart"><div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Terminal</span></div><pre><code>curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</code></pre></div><p>For Claude Code: <code>curl -O .../CLAUDE.md</code></p><p>Installer: <code>curl -sSL .../install/install.sh | bash</code></p></section>
 <div class="page-nav">
 <a href="https://devanimecx.github.io/adhd-mode/">← Home</a>
 <a href="https://devanimecx.github.io/adhd-mode/pages/cursor.html">Cursor</a>
@@ -287,7 +295,6 @@ a:hover{color:var(--accent2)}
 <p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
 </div></footer>
 <script>
-AOS.init({duration:600,once:true,offset:80});
 // Scroll progress
 window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
 // Tabs
