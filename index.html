@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="adhd-mode — ADHD-Friendly Output Rules for AI Coding Tools | Cursor, Copilot, Windsurf, Gemini, Codex">
 <meta name="twitter:description" content="ADHD-friendly output rules for Cursor, GitHub Copilot, Windsurf, Gemini CLI, Codex, Claude Code, and 20+ AI coding tools. Always on. One file. Anti-decay.">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"adhd-mode","description":"ADHD-friendly output rules for AI coding assistants.","url":"https://devanimecx.github.io/adhd-mode/","applicationCategory":"DeveloperApplication","operatingSystem":"Any","softwareVersion":"2.1.0","license":"https://opensource.org/licenses/MIT","codeRepository":"https://github.com/DevAnimecx/adhd-mode","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What is adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "adhd-mode ships 10 output rules making AI coding assistants produce ADHD-friendly output. One AGENTS.md file works in 20+ tools including Cursor, Copilot, Windsurf, Gemini CLI, Codex, and Claude Code. Rules adapted from i-have-adhd (MIT)."}}, {"@type": "Question", "name": "How is adhd-mode different from i-have-adhd?", "acceptedAnswer": {"@type": "Answer", "text": "i-have-adhd is invoked per session. adhd-mode is always on. It also fixes rule decay, fabricated time estimates, and bloat. Covers Copilot, Windsurf, and Gemini that the original doesn't."}}, {"@type": "Question", "name": "How do I install adhd-mode?", "acceptedAnswer": {"@type": "Answer", "text": "Run: curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md then restart your editor."}}, {"@type": "Question", "name": "Which tools are supported?", "acceptedAnswer": {"@type": "Answer", "text": "Codex, Cursor, Copilot, Windsurf, Gemini CLI, Claude Code, Aider, Zed, and 20+ others via AGENTS.md."}}, {"@type": "Question", "name": "Does adhd-mode stop working after a few turns?", "acceptedAnswer": {"@type": "Answer", "text": "No. Anti-decay mechanism with re-injection. Say 'adhd mode' again to re-apply."}}, {"@type": "Question", "name": "Do I need an ADHD diagnosis?", "acceptedAnswer": {"@type": "Answer", "text": "No. Works as 'action-first mode' for anyone."}}, {"@type": "Question", "name": "Why no time estimates?", "acceptedAnswer": {"@type": "Answer", "text": "Replaced with scope-by-shape: Quick, Medium, Large."}}, {"@type": "Question", "name": "Is adhd-mode free?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. MIT licensed. No paid features."}}]}</script>
 <style>/* adhd-mode premium UI — Magic UI-inspired effects in pure CSS */
@@ -227,9 +227,6 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 .page-nav a{padding:5px 12px;border-radius:7px;font-size:.82rem;font-weight:600;background:var(--surface-solid);color:var(--muted);transition:all .2s}
 .page-nav a:hover{color:var(--accent);border-color:var(--accent)}
 
-/* ===== AOS overrides ===== */
-[data-aos]{pointer-events:auto}
-
 /* ===== Dot pattern (Magic UI: Dot Pattern) ===== */
 .dot-bg{position:absolute;inset:0;z-index:0;pointer-events:none;
   background-image:radial-gradient(circle,rgba(88,166,255,0.08) 1px,transparent 1px);
@@ -246,6 +243,17 @@ footer a{color:var(--muted)}footer a:hover{color:var(--accent)}
 
 a{color:var(--accent);text-decoration:none;transition:color .2s}
 a:hover{color:var(--accent2)}
+
+/* ===== Safe page-load animations (zero external deps, content always visible) ===== */
+@keyframes slideUp{from{transform:translateY(24px)}to{transform:translateY(0)}}
+.hero{animation:slideUp .7s ease}
+section{animation:slideUp .5s ease}
+.stats{animation:slideUp .5s ease .1s}
+.neon-card,.magic-card{animation:slideUp .4s ease}
+.ba-card{animation:slideUp .4s ease}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
 </style>
 </head><body>
 <div class="grid-bg"></div>
@@ -264,7 +272,7 @@ a:hover{color:var(--accent2)}
 </div></nav>
 <div class="container">
 
-<div class="hero" data-aos="fade-up">
+<div class="hero">
 <div class="meteors"><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div><div class="meteor"></div></div>
 <h1>AI output that <span class="aurora-text">respects your working memory</span></h1>
 <p class="sub">Drop one file in your repo. Every AI coding tool — Cursor, Copilot, Windsurf, Gemini, Codex, Claude, and 20+ more — stops burying the answer and starts leading with <span class="word-rotate"><span class="words"><span>action.</span><span>clarity.</span><span>results.</span></span></span> Always on. No slash command.</p>
@@ -280,14 +288,14 @@ a:hover{color:var(--accent2)}
 </div>
 </div>
 
-<div class="stats" data-aos="fade-up">
+<div class="stats">
 <div class="stat"><div class="num" data-count="10">0</div><div class="label">Output Rules</div></div>
 <div class="stat"><div class="num" data-count="20">0</div><div class="label">+ Tools</div></div>
 <div class="stat"><div class="num" data-count="1">0</div><div class="label">File</div></div>
 <div class="stat"><div class="num" data-count="0">0</div><div class="label">Dependencies</div></div>
 </div>
 
-<div class="marquee" data-aos="fade-up">
+<div class="marquee">
 <div class="marquee-track">
 <span class="marquee-item"><span class="dot-sm"></span>Cursor</span>
 <span class="marquee-item"><span class="dot-sm"></span>GitHub Copilot</span>
@@ -310,7 +318,7 @@ a:hover{color:var(--accent2)}
 </div>
 </div>
 
-<section id="problem" data-aos="fade-up">
+<section id="problem">
 <h2>The problem</h2>
 <p class="sec-sub">Every AI coding assistant wastes your time with filler:</p>
 <div class="ba-grid">
@@ -319,7 +327,7 @@ a:hover{color:var(--accent2)}
 </div>
 </section>
 
-<div class="glass-section" data-aos="fade-up">
+<div class="glass-section">
 <h2 style="font-size:1.6rem;">What's new in v2.0</h2>
 <p class="sec-sub">Based on 324 HN comments about i-have-adhd (42k+ stars), v2.0 fixes the top complaints:</p>
 <div class="features">
@@ -332,7 +340,7 @@ a:hover{color:var(--accent2)}
 </div>
 </div>
 
-<section id="rules" data-aos="fade-up">
+<section id="rules">
 <h2>The 10 rules</h2>
 <table>
 <thead><tr><th>#</th><th>Rule</th><th>What it does</th><th>ADHD challenge</th></tr></thead>
@@ -352,7 +360,7 @@ a:hover{color:var(--accent2)}
 <p><a href="https://devanimecx.github.io/adhd-mode/pages/rules.html">Full rules breakdown →</a></p>
 </section>
 
-<section id="install" data-aos="fade-up">
+<section id="install">
 <h2>Install in 30 seconds</h2>
 <div class="quickstart">
 <div class="header"><div class="dots"><div class="dot r"></div><div class="dot y"></div><div class="dot g"></div></div><span class="qs-title">Quickstart — one file, 20+ tools</span></div>
@@ -381,7 +389,7 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <pre><code>curl -sSL https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/install/install.sh | bash</code></pre>
 </section>
 
-<section data-aos="fade-up">
+<section>
 <h2>adhd-mode vs i-have-adhd</h2>
 <table>
 <thead><tr><th>Feature</th><th>i-have-adhd</th><th>adhd-mode</th></tr></thead>
@@ -399,7 +407,7 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <p><a href="https://devanimecx.github.io/adhd-mode/pages/alternative.html">Full comparison →</a></p>
 </section>
 
-<section data-aos="fade-up">
+<section>
 <h2>FAQ</h2>
 <details class="faq-item"><summary>What is adhd-mode?</summary><p>adhd-mode ships 10 output rules making AI coding assistants produce ADHD-friendly output. One AGENTS.md file works in 20+ tools including Cursor, Copilot, Windsurf, Gemini CLI, Codex, and Claude Code. Rules adapted from i-have-adhd (MIT).</p></details>
 <details class="faq-item"><summary>How is adhd-mode different from i-have-adhd?</summary><p>i-have-adhd is invoked per session. adhd-mode is always on. It also fixes rule decay, fabricated time estimates, and bloat. Covers Copilot, Windsurf, and Gemini that the original doesn't.</p></details>
@@ -411,7 +419,7 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <details class="faq-item"><summary>Is adhd-mode free?</summary><p>Yes. MIT licensed. No paid features.</p></details>
 </section>
 
-<div class="cta-section" data-aos="fade-up">
+<div class="cta-section">
 <h2 class="glow">Ready to stop scrolling past "Great question!"?</h2>
 <p style="color:var(--muted);margin-bottom:28px;">One file. 30 seconds. Every AI tool.</p>
 <div class="cta-group">
@@ -426,7 +434,6 @@ curl -O https://raw.githubusercontent.com/DevAnimecx/adhd-mode/main/AGENTS.md</c
 <p style="margin-top:6px;">No accounts · No telemetry · Just one file</p>
 </div></footer>
 <script>
-AOS.init({duration:600,once:true,offset:80});
 // Scroll progress
 window.addEventListener('scroll',function(){var p=document.querySelector('.scroll-progress');if(p){var h=document.documentElement.scrollHeight-window.innerHeight;p.style.width=(scrollY/h*100)+'%';}});
 // Tabs
